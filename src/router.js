@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-//import all router components here
-import Author from './components/Authors/Author'
-import Authors from './components/Authors/Authors'
+import { Author, Authors } from './components/Authors'
 
 Vue.use(Router)
 

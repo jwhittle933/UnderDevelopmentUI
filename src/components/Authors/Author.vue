@@ -5,7 +5,7 @@
 </template>
 
 <script>
-export default {
+export const Author = {
   name: 'author',
   data() {
     return {
@@ -18,6 +18,8 @@ export default {
     }
   }
 }
+
+export default Author
 </script>
 
 <style scoped></style>
