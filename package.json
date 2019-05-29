@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "start": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "core-js": "^2.6.5",
+    "eslint-plugin-prettier": "^3.1.0",
     "vue": "^2.6.10",
     "vue-router": "^3.0.6"
   },
@@ -24,5 +26,17 @@
     "lint-staged": "^8.1.7",
     "prettier": "^1.17.1",
     "vue-template-compiler": "^2.5.21"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js, vue}": [
+      "vue-cli-service lint",
+      "prettier --write",
+      "git add"
+    ]
   }
 }
