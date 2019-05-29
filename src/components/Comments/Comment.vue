@@ -6,10 +6,10 @@
 
 <script>
 export const Comment = {
-  name: 'Comment ',
+  name: 'Comment Component',
   data() {
     return {
-      msg: 'This is a single Comment',
+      msg: 'Comment ',
     }
   },
   computed: {
