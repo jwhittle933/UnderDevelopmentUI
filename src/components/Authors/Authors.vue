@@ -9,9 +9,9 @@ export const Authors = {
   name: 'AuthorsView',
   data() {
     return {
-      msg: 'Authors View'
+      msg: 'Authors View',
     }
-  }
+  },
 }
 
 export default Authors

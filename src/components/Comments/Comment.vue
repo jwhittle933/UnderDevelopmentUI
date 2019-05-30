@@ -1,25 +1,25 @@
 <template>
   <div>
-    <h1>{{ msg }}{{ authorId }}</h1>
+    <h1>{{ msg }}{{ commentId }}</h1>
   </div>
 </template>
 
 <script>
-export const Author = {
-  name: 'author',
+export const Comment = {
+  name: 'Comment Component',
   data() {
     return {
-      msg: `Author `,
+      msg: 'Comment ',
     }
   },
   computed: {
-    authorId() {
+    commentId() {
       return this.$route.params.id
     },
   },
 }
 
-export default Author
+export default Comment
 </script>
 
 <style scoped></style>
