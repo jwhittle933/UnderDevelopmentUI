@@ -1,5 +1,5 @@
 <template>
-    <div id='menuList'>
+    <div id='menu-wrapper'>
         <a class='menu-links' :href=link v-for='link in links' :key='link'>{{ link }}</a>
     </div>
 </template>
@@ -12,7 +12,7 @@ export default {
     data () {
 
         return {
-            links: [`Home`, `Profile`, `Authors`, `About Us`, `Contact Us`, `Login`]
+            links: [`Info`, `Posts`, `Contact Us`]
         }
     },
 }
@@ -20,6 +20,13 @@ export default {
 
 <style scoped>
    .menu-links {
-        padding: 0 1em;
-    }
+       display: block; 
+       margin: .5em 0;
+       padding: 0 1em;
+       color: white; 
+   }
+   #menu-wrapper {
+        margin-top: 5vh; 
+        background-color: #2c3e50;
+   }
 </style>

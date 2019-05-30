@@ -9,6 +9,7 @@
 <script>
 export const MenuIcon = {
   name: 'MenuIcon',
+
   data() {
     return {
       hover: false,
@@ -16,6 +17,7 @@ export const MenuIcon = {
   },
 }
 export default MenuIcon
+import Menu from '../Layout/Menu.vue'
 </script>
 
 <style scoped>

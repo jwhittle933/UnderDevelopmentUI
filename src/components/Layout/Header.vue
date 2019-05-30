@@ -1,7 +1,6 @@
 <template>
   <div class="header">
     <div class="nav">
-      <MenuIcon></MenuIcon>
       <Menu />
     </div>
     <div class="logo">{{ headerText }}</div>
@@ -12,16 +11,15 @@
 </template>
 
 <script>
-import { MenuIcon } from '../Shared'
 import { UserIcon } from '../Shared'
 import Menu from './Menu.vue'
+
 
 export const Header = {
   name: 'Header',
   components: {
-    MenuIcon,
-    UserIcon,
     Menu,
+    UserIcon,
   },
   data() {
     return {
@@ -47,7 +45,7 @@ export default Header
   padding-top: 1em;
 }
 .nav {
-  padding-left: 2em;
+  position: fixed left; 
 }
 
 .user {
