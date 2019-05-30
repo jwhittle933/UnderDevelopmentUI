@@ -19,7 +19,7 @@ export default {
   },
   data() {
     return {
-      msg: 'Hello from UnderDevelopment',
+      msg: 'UnderDevelopment',
     }
   },
 }

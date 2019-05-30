@@ -29,6 +29,13 @@ export default Header
   align-items: center;
   width: 100%;
   maxheight: 2em;
-  padding: 1em;
+  padding-top: 1em;
+}
+.nav {
+  padding-left: 2em;
+}
+
+.user {
+  padding-right: 2em;
 }
 </style>
