@@ -1,6 +1,9 @@
 <template>
   <div id='menu-wrapper'>
-    <a class='menu-links' :href=link v-for='link in links' :key='link'>{{ link }}</a>
+    <a class='menu-links' @mouseover="hover=true" @mouseleave="hover=false" :href=link v-for='link in links' :key='link'>{{ link }}</a>
+    <ul v-if='hover'>
+      <li>IT Works!</li>
+    </ul>
   </div>
 </template>
 
@@ -9,7 +12,8 @@ export default {
   name: 'Menu',
   data () {
     return {
-        links: [`Info`, `Posts`, `Contact Us`]
+        links: [`Info`, `Posts`, `Contact Us`],
+        hover: false,
     }
   },
 }
@@ -26,5 +30,8 @@ export default {
     margin-top: 1em;
     background-color: #2c3e50;
     margin-right: 1em;
+  }
+  ul {
+    color: white;
   }
 </style>
