@@ -36,6 +36,8 @@ export default {
 }
 
 h1 {
+  position: fixed;
+  left: 40%; 
   font-size: 2em;
   font-family: Roboto;
 }

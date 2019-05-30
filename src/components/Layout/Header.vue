@@ -35,7 +35,7 @@ export default Header
   top: 0;
   left: 0;
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   flex-wrap: nowrap;
   overflow: visible;
   justify-content: space-between;
@@ -43,15 +43,17 @@ export default Header
   width: 100%;
   max-height: 2em;
   padding-top: 1em;
+  margin-bottom: 1em; 
 }
 .nav {
   display: flex;
-  margin-top: 1em;  
   padding-right: 2em;
 }
 
 
 .logo {
+  position: fixed; 
+  left: 40%;
   font-family: 'Nunito', sans-serif;
   font-size: 1.5em;
 }
