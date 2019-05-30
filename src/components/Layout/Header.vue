@@ -2,6 +2,7 @@
   <div class="header">
     <div class="nav">
       <MenuIcon></MenuIcon>
+      <Menu />
     </div>
     <div class="logo">{{ headerText }}</div>
     <div class="user">
@@ -13,12 +14,14 @@
 <script>
 import { MenuIcon } from '../Shared'
 import { UserIcon } from '../Shared'
+import Menu from './Menu.vue'
 
 export const Header = {
   name: 'Header',
   components: {
     MenuIcon,
     UserIcon,
+    Menu,
   },
   data() {
     return {
