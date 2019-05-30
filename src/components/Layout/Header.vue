@@ -45,7 +45,7 @@ export default Header
   padding-top: 1em;
 }
 .nav {
-  position: fixed left; 
+  margin-top: 1em;  
 }
 
 .user {

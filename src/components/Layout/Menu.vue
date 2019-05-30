@@ -21,12 +21,12 @@ export default {
 <style scoped>
    .menu-links {
        display: block; 
-       margin: .5em 0;
-       padding: 0 1em;
+       padding: .5em 1em;
        color: white; 
+       text-decoration: none;
    }
    #menu-wrapper {
-        margin-top: 5vh; 
+        margin-top: 50px; 
         background-color: #2c3e50;
    }
 </style>
