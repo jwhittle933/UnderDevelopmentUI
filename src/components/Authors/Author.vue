@@ -9,14 +9,14 @@ export const Author = {
   name: 'author',
   data() {
     return {
-      msg: `Author `
+      msg: `Author `,
     }
   },
   computed: {
     authorId() {
       return this.$route.params.id
-    }
-  }
+    },
+  },
 }
 
 export default Author

@@ -6,13 +6,15 @@
 </template>
 
 <script>
+// import { mapState } from 'vuex'
+
 export default {
   name: 'app',
   data() {
     return {
-      msg: 'Hello from UnderDevelopment'
+      msg: 'Hello from UnderDevelopment',
     }
-  }
+  },
 }
 </script>
 
