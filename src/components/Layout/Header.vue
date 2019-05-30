@@ -1,14 +1,25 @@
 <template>
   <div class="header">
-    <div class="nav">NavIcon</div>
+    <div class="nav">
+      <MenuIcon></MenuIcon>
+    </div>
     <div class="logo">{{ headerText }}</div>
-    <div class="user">Login/Logout</div>
+    <div class="user">
+      <UserIcon></UserIcon>
+    </div>
   </div>
 </template>
 
 <script>
+import { MenuIcon } from '../Shared'
+import { UserIcon } from '../Shared'
+
 export const Header = {
   name: 'Header',
+  components: {
+    MenuIcon,
+    UserIcon,
+  },
   data() {
     return {
       headerText: 'Under Development',
@@ -25,10 +36,11 @@ export default Header
   top: 0;
   left: 0;
   display: flex;
+  overflow: visible;
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  maxheight: 2em;
+  max-height: 2em;
   padding-top: 1em;
 }
 .nav {
@@ -37,5 +49,10 @@ export default Header
 
 .user {
   padding-right: 2em;
+}
+
+.logo {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.5em;
 }
 </style>
