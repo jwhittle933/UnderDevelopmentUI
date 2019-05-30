@@ -1,15 +1,22 @@
 <template>
   <div id="app">
-    <h1>{{ msg }}</h1>
+    <Header></Header>
+    <div>
+      <h1>{{ msg }}</h1>
+    </div>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
 // import { mapState } from 'vuex'
+import { Header } from './components/Layout'
 
 export default {
   name: 'app',
+  components: {
+    Header,
+  },
   data() {
     return {
       msg: 'Hello from UnderDevelopment',
