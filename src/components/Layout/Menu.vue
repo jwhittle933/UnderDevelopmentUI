@@ -20,13 +20,14 @@ export default {
 
 <style scoped>
    .menu-links {
-       display: block; 
+       display: inline-block; 
        padding: .5em 1em;
        color: white; 
        text-decoration: none;
    }
    #menu-wrapper {
-        margin-top: 50px; 
+        margin-top: 1em; 
         background-color: #2c3e50;
+        margin-right: 1em;
    }
 </style>

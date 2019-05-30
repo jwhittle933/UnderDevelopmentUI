@@ -1,10 +1,8 @@
 <template>
   <div class="header">
-    <div class="nav">
-      <Menu />
-    </div>
     <div class="logo">{{ headerText }}</div>
-    <div class="user">
+    <div class="nav">
+      <Menu></Menu>
       <UserIcon></UserIcon>
     </div>
   </div>
@@ -37,6 +35,8 @@ export default Header
   top: 0;
   left: 0;
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   overflow: visible;
   justify-content: space-between;
   align-items: center;
@@ -45,12 +45,11 @@ export default Header
   padding-top: 1em;
 }
 .nav {
+  display: flex;
   margin-top: 1em;  
-}
-
-.user {
   padding-right: 2em;
 }
+
 
 .logo {
   font-family: 'Nunito', sans-serif;
