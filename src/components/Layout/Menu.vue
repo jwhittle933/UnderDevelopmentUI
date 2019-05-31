@@ -1,10 +1,18 @@
 <template>
-  <div id='menu-wrapper'>
-    <a class='menu-links' @mouseover='hover=true' @mouseleave='hover=false' :href=link v-for='link in links' :key='link'>{{ link }}</a>
-    <ul v-if='hover'>
-      <li>IT Works!</li>
-    </ul>
-  </div>
+    <nav id='menu-wrapper'>
+      <div class='menu-links' @mouseover='infoHover=true' @mouseleave='infoHover=false'>
+        <li ><a href='/info'>Info</a></li>
+        <ul v-if='infoHover' id='info-link' class='dropdown-menu'><a :href=link class='dropdown-link' v-for='link in infoLinks' :key=link>{{ link }}</a></ul>
+      </div>
+
+      <div class='menu-links' @mouseover='postHover=true' @mouseleave='postHover=false'>
+        <li><a href='/posts'>Posts</a></li>
+        <ul v-if='postHover' id='posts-link' class='dropdown-menu'><a :href=link class='dropdown-link' v-for='link in postLinks' :key=link>{{ link }}</a></ul>
+      </div>
+      <div class='menu-links'>
+        <li><a  href='/contact'>Contact Us</a></li>
+      </div>
+    </nav>
 </template>
 
 <script>
@@ -13,7 +21,10 @@ export default {
   data () {
     return {
         links: [`Info`, `Posts`, `Contact Us`],
-        hover: false,
+        infoLinks: ['About Us', 'Authors'],
+        postLinks: ['Top Posts', 'Development', 'Christian Living'],
+        infoHover: false,
+        postHover: false,
     }
   },
 }
@@ -21,17 +32,44 @@ export default {
 
 <style scoped>
   .menu-links {
+    margin: 0 1em; 
     display: inline-block;
     padding: .5em 1em;
-    color: white;
+    color: #2c3e50;
     text-decoration: none;
+    font-weight: bold; 
+  }
+  .menu-links a {
+    color: inherit;
+    text-decoration: inherit;
+  }
+  .dropdown-menu { 
+    position: absolute; 
+    padding-top: 1.5em;
+    padding-right:.5em;
+    padding-left: .5em; 
+    color: inherit;
+    text-decoration: none;
+    background-color: rgba(120, 120, 120, 0.4);
+  }
+  #info-link {
+    top: 19%;
+    right: 27%;
+  }
+  #posts-link {
+    top: 19%;
+    right: 18%;
+  }
+  .dropdown-link {
+    display: block; 
   }
   #menu-wrapper {
+    display: flex; 
+    background-color: rgba(0, 0, 0, 0);
     margin-top: 1em;
-    background-color: #2c3e50;
     margin-right: 1em;
   }
   ul {
-    color: white;
+    color:#2c3e50;;
   }
 </style>
