@@ -1,10 +1,18 @@
 <template>
-  <img class="bg-image" :src="image" />
+  <div class="landing">
+    <img class="bg-image" :src="image" />
+    <TopPosts></TopPosts>
+  </div>
 </template>
 
 <script>
+import { TopPosts } from './'
+
 export const Landing = {
   name: 'LandingView',
+  components: {
+    TopPosts,
+  },
   data() {
     return {
       image: require('../../assets/splash.jpg'),
