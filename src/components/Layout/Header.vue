@@ -46,7 +46,7 @@ export default Header
   transition: background-color 0.2s ease-in;
 }
 .header:hover {
-    background-color: rgba(120, 120, 120, 0.4);
+  background-color: rgba(120, 120, 120, 0.4);
 }
 .nav {
   padding-left: 2em;
