@@ -1,6 +1,6 @@
 <template>
   <div id='menu-wrapper'>
-    <a class='menu-links' @mouseover="hover=true" @mouseleave="hover=false" :href=link v-for='link in links' :key='link'>{{ link }}</a>
+    <a class='menu-links' @mouseover='hover=true' @mouseleave='hover=false' :href=link v-for='link in links' :key='link'>{{ link }}</a>
     <ul v-if='hover'>
       <li>IT Works!</li>
     </ul>
