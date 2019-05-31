@@ -42,8 +42,12 @@ export default Header
   align-items: center;
   width: 100%;
   max-height: 2em;
-  padding-top: 1em;
-  margin-bottom: 1em; 
+  padding: 1em;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.2s ease-in;
+}
+.header:hover {
+  background-color: rgba(120, 120, 120, 0.4);
 }
 .nav {
   display: flex;
