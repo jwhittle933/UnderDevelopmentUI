@@ -1,9 +1,7 @@
 <template>
   <div id="app">
     <Header></Header>
-    <div>
-      <h1>{{ msg }}</h1>
-    </div>
+    <img class="bg-image" src="./assets/splash.jpg" />
     <router-view></router-view>
   </div>
 </template>
@@ -26,17 +24,24 @@ export default {
 </script>
 
 <style>
+body {
+  margin: 0;
+}
+h1 {
+  font-size: 2em;
+  font-family: Roboto;
+}
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Nunito', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
-
-h1 {
-  font-size: 2em;
-  font-family: Roboto;
+.bg-image {
+  width: 100%;
+  height: 100%;
+  margin: 0;
 }
 </style>
