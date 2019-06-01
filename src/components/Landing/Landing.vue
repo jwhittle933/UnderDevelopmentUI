@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { TopPosts } from './'
+import { TopPosts } from './TopPosts'
 
 export const Landing = {
   name: 'LandingView',
