@@ -1,3 +1,6 @@
+import { Comments } from './'
+const comments = Object.values(Comments)
+
 /* eslint-disable */
 
 /**
@@ -16,6 +19,7 @@ Posts.post1 = {
   visible: true,
   user_id: 1,
   featured_image: 'https://s3.aws.com/featuredImage/8dklf-2kdf',
+  comments: comments,
   inserted_at: '2019-04-27 18:39:54',
   updated_at: '2019-04-27 18:39:54',
 }
@@ -28,6 +32,7 @@ Posts.post2 = {
   visible: false,
   user_id: 1,
   featured_image: 'https://s3.aws.com/featuredImage/8dklf-2kdf',
+  comments: comments,
   inserted_at: '2019-04-27 18:39:54',
   updated_at: '2019-04-27 18:39:54',
 }
@@ -40,6 +45,7 @@ Posts.post3 = {
   visible: true,
   user_id: 1,
   featured_image: 'https://s3.aws.com/featuredImage/8dklf-2kdf',
+  comments: comments,
   inserted_at: '2019-04-27 18:39:54',
   updated_at: '2019-04-27 18:39:54',
 }
@@ -52,6 +58,7 @@ Posts.pos4 = {
   visible: true,
   user_id: 1,
   featured_image: 'https://s3.aws.com/featuredImage/8dklf-2kdf',
+  comments: comments,
   inserted_at: '2019-04-27 18:39:54',
   updated_at: '2019-04-27 18:39:54',
 }
@@ -64,6 +71,7 @@ Posts.post5 = {
   visible: false,
   user_id: 1,
   featured_image: 'https://s3.aws.com/featuredImage/8dklf-2kdf',
+  comments: comments,
   inserted_at: '2019-04-27 18:39:54',
   updated_at: '2019-04-27 18:39:54',
 }
@@ -76,6 +84,7 @@ Posts.post6 = {
   visible: true,
   user_id: 1,
   featured_image: 'https://s3.aws.com/featuredImage/8dklf-2kdf',
+  comments: comments,
   inserted_at: '2019-04-27 18:39:54',
   updated_at: '2019-04-27 18:39:54',
 }
@@ -88,6 +97,7 @@ Posts.post7 = {
   visible: true,
   user_id: 1,
   featured_image: 'https://s3.aws.com/featuredImage/8dklf-2kdf',
+  comments: comments,
   inserted_at: '2019-04-27 18:39:54',
   updated_at: '2019-04-27 18:39:54',
 }
@@ -100,6 +110,7 @@ Posts.post8 = {
   visible: false,
   user_id: 1,
   featured_image: 'https://s3.aws.com/featuredImage/8dklf-2kdf',
+  comments: comments,
   inserted_at: '2019-04-27 18:39:54',
   updated_at: '2019-04-27 18:39:54',
 }
@@ -112,6 +123,7 @@ Posts.post9 = {
   visible: true,
   user_id: 1,
   featured_image: 'https://s3.aws.com/featuredImage/8dklf-2kdf',
+  comments: comments,
   inserted_at: '2019-04-27 18:39:54',
   updated_at: '2019-04-27 18:39:54',
 }
@@ -124,6 +136,7 @@ Posts.post10 = {
   visible: true,
   user_id: 1,
   featured_image: 'https://s3.aws.com/featuredImage/8dklf-2kdf',
+  comments: comments,
   inserted_at: '2019-04-27 18:39:54',
   updated_at: '2019-04-27 18:39:54',
 }
