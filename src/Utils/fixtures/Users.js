@@ -1,4 +1,11 @@
 /* eslint-disable */
+
+/**
+ * The Users data structure as it will be kept in the persistence layer. When creating a new User (a feature only exposed for authorized users with admin: true), :email will validated on the backend for the correct format (but should still be validated on the client) and password will be validated for length > 6. As well, when creating a new user, :name, :admin, :email, and :password are required fields. The :password field will NEVER be stored in the persistence layer. When a new user is submitted for creation, the :password field will be hashed and stored, resulting in a :password_hash key on the data structure.
+ *
+ * To log a user in, :email and :password will be submitted to the api, which will retrieve a user from the DB by :email, and then will check the submitted :password against the stored :password_hash. If either of this checks fail, errors will be returned to the client. Perhaps in the future a limited number of login attempts may be enabled, but I'm not sure this is even necessary.
+ */
+
 export const Users = {}
 
 Users.admin = {
