@@ -11,7 +11,7 @@ export const getUser = email => {
 export const getAllUsers = () => {
   return new Promise(resolve => {
     setTimeout(() => {
-      resolve(Object.values(Users))
+      resolve(Users)
     }, 0)
   })
 }

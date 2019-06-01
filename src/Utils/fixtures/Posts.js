@@ -1,5 +1,4 @@
 import { Comments } from './'
-const comments = Object.values(Comments)
 
 /* eslint-disable */
 
@@ -9,9 +8,9 @@ const comments = Object.values(Comments)
  * Notice next that these objects have fields in snake_case, i.e., user_id, featured_image. Snake_case is the convention in Elixir, so the data we will be handling will often come back in this form. In this application, camelCase is the convention and is enforced by the linter. Only in files that will integrate with the backend is snake_case allowed. To do this and avoid linting errors, each file must include eslint-disable at the top of the file, as above.
  */
 
-export const Posts = {}
+const posts = {}
 
-Posts.post1 = {
+posts.post1 = {
   id: 1,
   title: 'A Lorem Post about Ipsum',
   body:
@@ -19,12 +18,12 @@ Posts.post1 = {
   visible: true,
   user_id: 1,
   featured_image: 'https://s3.aws.com/featuredImage/8dklf-2kdf',
-  comments: comments,
+  comments: Comments,
   inserted_at: '2019-04-27 18:39:54',
   updated_at: '2019-04-27 18:39:54',
 }
 
-Posts.post2 = {
+posts.post2 = {
   id: 2,
   title: 'A Lorem Post about Ipsum',
   body:
@@ -32,12 +31,12 @@ Posts.post2 = {
   visible: false,
   user_id: 1,
   featured_image: 'https://s3.aws.com/featuredImage/8dklf-2kdf',
-  comments: comments,
+  comments: Comments,
   inserted_at: '2019-04-27 18:39:54',
   updated_at: '2019-04-27 18:39:54',
 }
 
-Posts.post3 = {
+posts.post3 = {
   id: 3,
   title: 'A Lorem Post about Ipsum',
   body:
@@ -45,12 +44,12 @@ Posts.post3 = {
   visible: true,
   user_id: 1,
   featured_image: 'https://s3.aws.com/featuredImage/8dklf-2kdf',
-  comments: comments,
+  comments: Comments,
   inserted_at: '2019-04-27 18:39:54',
   updated_at: '2019-04-27 18:39:54',
 }
 
-Posts.pos4 = {
+posts.pos4 = {
   id: 4,
   title: 'A Lorem Post about Ipsum',
   body:
@@ -58,12 +57,12 @@ Posts.pos4 = {
   visible: true,
   user_id: 1,
   featured_image: 'https://s3.aws.com/featuredImage/8dklf-2kdf',
-  comments: comments,
+  comments: Comments,
   inserted_at: '2019-04-27 18:39:54',
   updated_at: '2019-04-27 18:39:54',
 }
 
-Posts.post5 = {
+posts.post5 = {
   id: 5,
   title: 'A Lorem Post about Ipsum',
   body:
@@ -71,12 +70,12 @@ Posts.post5 = {
   visible: false,
   user_id: 1,
   featured_image: 'https://s3.aws.com/featuredImage/8dklf-2kdf',
-  comments: comments,
+  comments: Comments,
   inserted_at: '2019-04-27 18:39:54',
   updated_at: '2019-04-27 18:39:54',
 }
 
-Posts.post6 = {
+posts.post6 = {
   id: 6,
   title: 'A Lorem Post about Ipsum',
   body:
@@ -84,12 +83,12 @@ Posts.post6 = {
   visible: true,
   user_id: 1,
   featured_image: 'https://s3.aws.com/featuredImage/8dklf-2kdf',
-  comments: comments,
+  comments: Comments,
   inserted_at: '2019-04-27 18:39:54',
   updated_at: '2019-04-27 18:39:54',
 }
 
-Posts.post7 = {
+posts.post7 = {
   id: 7,
   title: 'A Lorem Post about Ipsum',
   body:
@@ -97,12 +96,12 @@ Posts.post7 = {
   visible: true,
   user_id: 1,
   featured_image: 'https://s3.aws.com/featuredImage/8dklf-2kdf',
-  comments: comments,
+  comments: Comments,
   inserted_at: '2019-04-27 18:39:54',
   updated_at: '2019-04-27 18:39:54',
 }
 
-Posts.post8 = {
+posts.post8 = {
   id: 8,
   title: 'A Lorem Post about Ipsum',
   body:
@@ -110,12 +109,12 @@ Posts.post8 = {
   visible: false,
   user_id: 1,
   featured_image: 'https://s3.aws.com/featuredImage/8dklf-2kdf',
-  comments: comments,
+  comments: Comments,
   inserted_at: '2019-04-27 18:39:54',
   updated_at: '2019-04-27 18:39:54',
 }
 
-Posts.post9 = {
+posts.post9 = {
   id: 9,
   title: 'A Lorem Post about Ipsum',
   body:
@@ -123,12 +122,12 @@ Posts.post9 = {
   visible: true,
   user_id: 1,
   featured_image: 'https://s3.aws.com/featuredImage/8dklf-2kdf',
-  comments: comments,
+  comments: Comments,
   inserted_at: '2019-04-27 18:39:54',
   updated_at: '2019-04-27 18:39:54',
 }
 
-Posts.post10 = {
+posts.post10 = {
   id: 10,
   title: 'A Lorem Post about Ipsum',
   body:
@@ -136,7 +135,9 @@ Posts.post10 = {
   visible: true,
   user_id: 1,
   featured_image: 'https://s3.aws.com/featuredImage/8dklf-2kdf',
-  comments: comments,
+  comments: Comments,
   inserted_at: '2019-04-27 18:39:54',
   updated_at: '2019-04-27 18:39:54',
 }
+
+export const Posts = Object.values(posts)

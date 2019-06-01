@@ -1,7 +1,7 @@
 import { Posts } from '../../fixtures'
 
 export const getPost = postId => {
-  return new Promise((resolve, reject) => {
+  return new Promise(resolve => {
     setTimeout(() => {
       resolve(Posts.find(p => p.id === postId))
     }, 0)
@@ -9,7 +9,7 @@ export const getPost = postId => {
 }
 
 export const getAllPosts = () => {
-  return new Promise((resolve, reject) => {
+  return new Promise(resolve => {
     setTimeout(() => {
       resolve(Object.values(Posts))
     })
