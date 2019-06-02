@@ -1,9 +1,9 @@
-import { Comments } from '../../fixtures'
+import { comments } from '@/Utils/fixtures'
 
 export const getComment = id => {
   return new Promise(resolve => {
     setTimeout(() => {
-      resolve(Comments.find(c => c.id === id))
+      resolve(comments.find(c => c.id === id))
     })
   })
 }
@@ -11,7 +11,7 @@ export const getComment = id => {
 export const getComments = () => {
   return new Promise(resolve => {
     setTimeout(() => {
-      resolve(Comments)
+      resolve(comments)
     })
   })
 }

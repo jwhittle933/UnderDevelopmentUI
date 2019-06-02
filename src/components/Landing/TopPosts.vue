@@ -20,7 +20,6 @@
 </template>
 
 <script>
-// import axios from 'axios'
 /*
  * This component will fetch posts by a tbd category of "top"
  */

@@ -1,9 +1,9 @@
-import { Users } from '../../fixtures'
+import { users } from '@/Utils/fixtures'
 
 export const getUser = email => {
   return new Promise(resolve => {
     setTimeout(() => {
-      resolve(Users.find(u => u.email === email))
+      resolve(users.find(u => u.email === email))
     }, 0)
   })
 }
@@ -11,7 +11,7 @@ export const getUser = email => {
 export const getAllUsers = () => {
   return new Promise(resolve => {
     setTimeout(() => {
-      resolve(Users)
+      resolve(users)
     }, 0)
   })
 }

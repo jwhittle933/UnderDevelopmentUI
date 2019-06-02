@@ -1,5 +1,13 @@
-<template></template>
+<template>
 
-<script></script>
+</template>
 
-<style scoped></scoped>
+<script>
+export const TopPostsTile = {}
+
+export default TopPostTile
+</script>
+
+<style scoped>
+
+</scoped>

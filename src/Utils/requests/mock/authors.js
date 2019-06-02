@@ -1,10 +1,10 @@
-import { Users } from '../../fixtures'
+import { users } from '@/Utils/fixtures'
 
 export const getAuthor = userId => {
   return new Promise(resolve => {
     setTimeout(() => {
       resolve(
-        Users.find(({ id, name, bio }) => {
+        users.find(({ id, name, bio }) => {
           if (id === userId) return { id, name, bio }
         }),
       )
@@ -16,7 +16,7 @@ export const getAuthors = () => {
   return new Promise(resolve => {
     setTimeout(() => {
       resolve(
-        Users.map(({ id, name, bio }) => {
+        users.map(({ id, name, bio }) => {
           id, name, bio
         }),
       )
