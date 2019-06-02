@@ -23,7 +23,7 @@ export const getAllPosts = () => {
   return new Promise(resolve => {
     setTimeout(() => {
       resolve(posts)
-    })
+    }, 0)
   })
 }
 

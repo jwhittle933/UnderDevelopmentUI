@@ -1,4 +1,3 @@
-import bcrypt from 'bcrypt'
 import { getUser } from './'
 
 /**
@@ -11,16 +10,16 @@ import { getUser } from './'
  * This data is very likely going to change as the api become more compelte. The client will do some validation but the api will handle these erros.
  */
 
-export const login = (email, password) => {
+export const login = (email, pass) => {
   return getUser(email).then(res => {
     if (res === undefined)
       return {
         msg: `${email} is incorrect`,
-        error: { field: 'email', data: { email, password } },
+        error: { field: 'email', data: { email, pass } },
       }
     // eslint-disable-next-line camelcase
-    const { password_hash, ...user } = res
-    if (bcrypt.compareSync(password, password_hash)) {
+    const { password, ...user } = res
+    if (password === pass) {
       sessionStorage.setItem('current_user_id', user.id)
       return {
         msg: `${user.name} logged in`,
@@ -29,7 +28,7 @@ export const login = (email, password) => {
     } else
       return {
         msg: 'Unauthorized. The email and password do not match',
-        errors: { field: 'password', data: { email, password } },
+        errors: { field: 'password', data: { email, pass } },
       }
   })
 }

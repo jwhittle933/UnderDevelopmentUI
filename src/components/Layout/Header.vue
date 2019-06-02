@@ -3,7 +3,7 @@
     <div class="nav">
       <MenuIcon></MenuIcon>
     </div>
-    <div class="logo">{{ headerText }}</div>
+    <div class="logo" @click="goHome">{{ headerText }}</div>
     <div class="user">
       <UserIcon></UserIcon>
     </div>
@@ -24,6 +24,9 @@ export const Header = {
     return {
       headerText: 'Under Development',
     }
+  },
+  methods: {
+    goHome: () => this.$router.push('/'),
   },
 }
 

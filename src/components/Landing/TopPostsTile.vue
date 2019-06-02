@@ -1,13 +1,22 @@
 <template>
-
+  <div class="top-posts-tile">
+    <span>{{ title }}</span>
+  </div>
 </template>
 
 <script>
-export const TopPostsTile = {}
+export const TopPostsTile = {
+  name: 'TopPostsTile',
+  props: ['id', 'title', 'body', 'visible', 'featured_image', 'user_id'],
+}
 
-export default TopPostTile
+export default TopPostsTile
 </script>
 
 <style scoped>
-
-</scoped>
+.top-posts-tile {
+  border: 2px solid red;
+  min-height: 12em;
+  cursor: pointer;
+}
+</style>
