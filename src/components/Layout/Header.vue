@@ -3,8 +3,8 @@
     <div class="nav">
       <MenuIcon></MenuIcon>
     </div>
-    <div class="logo">
-      <router-link to="/">{{ headerText }}</router-link>
+    <div class="logo" @click="goHome">
+      {{ headerText }}
     </div>
     <div class="user">
       <UserIcon></UserIcon>
@@ -28,7 +28,9 @@ export const Header = {
     }
   },
   methods: {
-    goHome: () => this.$router.push('/'),
+    goHome: function() {
+      this.$router.push('/')
+    },
   },
 }
 
