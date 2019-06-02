@@ -3,7 +3,9 @@
     <div class="nav">
       <MenuIcon></MenuIcon>
     </div>
-    <div class="logo" @click="goHome">{{ headerText }}</div>
+    <div class="logo">
+      <router-link to="/">{{ headerText }}</router-link>
+    </div>
     <div class="user">
       <UserIcon></UserIcon>
     </div>
