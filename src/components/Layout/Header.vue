@@ -1,9 +1,9 @@
 <template>
-  <div class="header">
+  <div id="header" class="header">
     <div class="nav">
       <MenuIcon></MenuIcon>
     </div>
-    <div class="logo" @click="goHome">
+    <div class="logo" @click="goHome" v-scroll="scroll">
       {{ headerText }}
     </div>
     <div class="user">
@@ -30,6 +30,11 @@ export const Header = {
   methods: {
     goHome: function() {
       this.$router.push('/')
+    },
+    scroll: function(evt, el) {
+      if (window.scrollY > 150) {
+        el.setAttribute('style', 'color: white')
+      } else el.setAttribute('style', 'color: inherit')
     },
   },
 }
@@ -67,5 +72,7 @@ export default Header
   font-family: 'Nunito', sans-serif;
   font-size: 1.5em;
   cursor: pointer;
+  color: inherit;
+  transition: color 0.3s ease-in;
 }
 </style>

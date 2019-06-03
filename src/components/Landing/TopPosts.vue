@@ -32,11 +32,15 @@ export const TopPosts = {
   },
   data() {
     return {
+      loading: true,
       posts: null,
     }
   },
   mounted() {
-    getAllPosts().then(res => (this.posts = res))
+    getAllPosts().then(res => {
+      this.posts = res
+      this.loading = false
+    })
   },
 }
 
