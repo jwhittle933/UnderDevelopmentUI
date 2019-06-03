@@ -17,7 +17,7 @@ export const Landing = {
   },
   data() {
     return {
-      image: require('../../assets/splash.jpg'),
+      image: require('@/assets/splash.jpg'),
     }
   },
 }
