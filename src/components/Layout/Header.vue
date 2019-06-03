@@ -24,7 +24,7 @@ export const Header = {
   },
   data() {
     return {
-      headerText: 'Under Development',
+      headerText: '_D | under development',
     }
   },
   methods: {
