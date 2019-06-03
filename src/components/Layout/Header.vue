@@ -66,5 +66,6 @@ export default Header
 .logo {
   font-family: 'Nunito', sans-serif;
   font-size: 1.5em;
+  cursor: pointer;
 }
 </style>
