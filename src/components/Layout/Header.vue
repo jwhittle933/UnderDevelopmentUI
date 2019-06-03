@@ -1,8 +1,5 @@
 <template>
   <div id="header" class="header">
-    <div class="nav">
-      <MenuIcon></MenuIcon>
-    </div>
     <div class="logo" @click="goHome" v-scroll="scroll">
       {{ headerText }}
     </div>
@@ -59,9 +56,6 @@ export default Header
 }
 .header:hover {
   background-color: rgba(120, 120, 120, 0.4);
-}
-.nav {
-  padding-left: 2em;
 }
 
 .user {
