@@ -1,5 +1,6 @@
 <template>
   <div class="top-posts-tile" @click="goToPost">
+    <!-- Placeholder image for now -->
     <img src="https://picsum.photos/275/150" />
     <span>{{ title }}</span>
   </div>
