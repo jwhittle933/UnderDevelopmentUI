@@ -52,10 +52,9 @@ p {
 }
 
 .top-posts-container {
-  display: grid;
-  grid-template-row: 100%;
-  grid-template-columns: 25% 75%;
-  height: 30em;
+  display: flex;
+  justify-content: space-between;
+  width: 86em;
   background-color: rgb(0, 0, 0);
   margin: 0;
   padding: 3em;
@@ -64,10 +63,14 @@ p {
 .title-block {
   color: #f1f1f1;
   text-align: left;
+  width: 25%;
+  margin: 1em auto;
 }
 
 .content-block {
   color: #f1f1f1;
+  max-width: 70em;
+  margin-left: 1em;
 }
 
 .top-posts-grid {

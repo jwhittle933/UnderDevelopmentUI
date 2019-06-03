@@ -1,5 +1,6 @@
 <template>
   <div class="top-posts-tile" @click="goToPost">
+    <img src="https://picsum.photos/275/150" />
     <span>{{ title }}</span>
   </div>
 </template>
@@ -20,8 +21,12 @@ export default TopPostsTile
 
 <style scoped>
 .top-posts-tile {
-  border: 2px solid red;
+  overflow: hidden;
   min-height: 12em;
+  width: 275px;
   cursor: pointer;
+  background-color: #d3d3d3;
+  color: black;
+  border-radius: 4px;
 }
 </style>
