@@ -1,9 +1,8 @@
 <template>
-  <div class="header">
-    <div class="nav">
-      <MenuIcon></MenuIcon>
+  <div id="header" class="header">
+    <div class="logo" @click="goHome" v-scroll="scroll">
+      {{ headerText }}
     </div>
-    <div class="logo">{{ headerText }}</div>
     <div class="user">
       <UserIcon></UserIcon>
     </div>
@@ -22,8 +21,18 @@ export const Header = {
   },
   data() {
     return {
-      headerText: 'Under Development',
+      headerText: '_D | under development',
     }
+  },
+  methods: {
+    goHome: function() {
+      this.$router.push('/')
+    },
+    scroll: function(evt, el) {
+      if (window.scrollY > 150) {
+        el.setAttribute('style', 'color: white')
+      } else el.setAttribute('style', 'color: inherit')
+    },
   },
 }
 
@@ -48,9 +57,6 @@ export default Header
 .header:hover {
   background-color: rgba(120, 120, 120, 0.4);
 }
-.nav {
-  padding-left: 2em;
-}
 
 .user {
   padding-right: 2em;
@@ -59,5 +65,8 @@ export default Header
 .logo {
   font-family: 'Nunito', sans-serif;
   font-size: 1.5em;
+  cursor: pointer;
+  color: inherit;
+  transition: color 0.3s ease-in;
 }
 </style>

@@ -10,30 +10,38 @@
       </p>
     </div>
     <div class="content-block">
-      <span>Posts</span>
-      <p>
-        This where we'll render the posts that the api sends in tiles. Perhaps
-        3x6 or 4x6 grid area.
-      </p>
+      <div class="top-posts-grid">
+        <div class="top-posts-tile-outer" v-for="post in posts" :key="post.id">
+          <TopPostsTile v-bind="post"></TopPostsTile>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-// import axios from 'axios'
+import { TopPostsTile } from './TopPostsTile'
+import { getAllPosts } from '@/Utils/requests/mock'
 /*
  * This component will fetch posts by a tbd category of "top"
  */
 export const TopPosts = {
   name: 'TopPosts',
+  components: {
+    TopPostsTile,
+  },
   data() {
     return {
-      topPosts: [],
+      loading: true,
+      posts: null,
     }
   },
-  // mounted: () => {
-  //   axios.get('some/url/enpoint').then(res => (this.topPosts = res.data))
-  // },
+  mounted() {
+    getAllPosts().then(res => {
+      this.posts = res
+      this.loading = false
+    })
+  },
 }
 
 export default TopPosts
@@ -48,10 +56,9 @@ p {
 }
 
 .top-posts-container {
-  display: grid;
-  grid-template-row: 100%;
-  grid-template-columns: 25% 75%;
-  height: 30em;
+  display: flex;
+  justify-content: space-between;
+  width: 86em;
   background-color: rgb(0, 0, 0);
   margin: 0;
   padding: 3em;
@@ -60,9 +67,22 @@ p {
 .title-block {
   color: #f1f1f1;
   text-align: left;
+  width: 25%;
+  margin: 1em auto;
 }
 
 .content-block {
   color: #f1f1f1;
+  max-width: 70em;
+  margin-left: 1em;
+}
+
+.top-posts-grid {
+  margin-top: 2em;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0.5em;
+  grid-row-gap: 0.5em;
 }
 </style>

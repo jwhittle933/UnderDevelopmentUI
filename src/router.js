@@ -2,11 +2,12 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import { Author, Authors } from './components/Authors'
 import { Comment, Comments } from './components/Comments'
+import { Landing } from './components/Landing'
 
 Vue.use(Router)
 
 const routes = [
-  { path: '/', component: null },
+  { path: '/', component: Landing },
   { path: '/posts', component: null },
   { path: '/post/:id', component: null },
   { path: '/authors', component: Authors },
