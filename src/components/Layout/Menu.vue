@@ -59,7 +59,6 @@ export default Menu
 .menu-wrapper {
   display: flex;
   background-color: rgba(0, 0, 0, 0);
-  margin-top: 1em;
   margin-right: 1em;
 }
 .menu-links {

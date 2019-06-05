@@ -3,12 +3,12 @@
     <div class="logo" @click="goHome">
       {{ headerText }}
     </div>
+    <div class="menu-wrapper">
+      <Menu></Menu>
+    </div>
     <div class="user">
       Login
       <UserIcon></UserIcon>
-    </div>
-    <div class="menu-wrapper">
-      <Menu></Menu>
     </div>
   </div>
 </template>
@@ -52,19 +52,15 @@ export default Header
   top: 0;
   left: 0;
   display: flex;
-  color: #000;
-  overflow: visible;
   justify-content: space-between;
   align-items: center;
+  color: #000;
+  overflow: visible;
   width: 100%;
   max-height: 2em;
   padding: 1em;
   background-color: rgba(0, 0, 0, 0);
   transition: background-color 0.2s ease-in;
-}
-
-.header:hover {
-  background-color: rgba(120, 120, 120, 0.4);
 }
 
 .user {
@@ -77,9 +73,6 @@ export default Header
 }
 
 .logo {
-  position: fixed;
-  top: 4%;
-  left: 40%;
   font-family: 'Nunito', sans-serif;
   font-size: 1.5em;
   cursor: pointer;
