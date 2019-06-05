@@ -61,11 +61,11 @@ export default Menu
   }
   #info-link {
     top: 19%;
-    right: 27%;
+    right: 23%;
   }
   #posts-link {
-    top: 19%;
-    right: 18%;
+    top: 18%;
+    right: 13%;
   }
   .dropdown-link {
     display: block; 

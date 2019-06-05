@@ -7,7 +7,9 @@
       Login
       <UserIcon></UserIcon>
     </div>
+    <div class="menu-wrapper">
       <Menu></Menu>
+    </div>
   </div>
 </template>
 
