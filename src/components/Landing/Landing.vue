@@ -2,11 +2,10 @@
   <div class="landing">
     <div
       class="bg-image-wrapper"
-       :style="{
+      :style="{
         'background-image': 'url(' + image + ')',
       }"
-      >
-    </div>
+    ></div>
     <TopPosts></TopPosts>
   </div>
 </template>
@@ -31,10 +30,10 @@ export default Landing
 
 <style scoped>
 .bg-image-wrapper {
-    min-height: 40em;
-    margin: 0;
-    background-position: top center;
-    background-size: cover;
+  min-height: 40em;
+  margin: 0;
+  background-position: top center;
+  background-size: cover;
 }
 
 .bg-image {

@@ -31,7 +31,10 @@ export const Header = {
     },
     scroll: function(evt, el) {
       if (window.scrollY > 150) {
-        el.setAttribute('style', 'color: white; background-color:  rgba(120, 120, 120, 0.4)')
+        el.setAttribute(
+          'style',
+          'color: white; background-color:  rgba(120, 120, 120, 0.4)',
+        )
       } else el.setAttribute('style', 'color: #000')
     },
   },
@@ -58,12 +61,12 @@ export default Header
 }
 
 .user {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-width: 5em;
-    padding-right: 2em;
-    color: #d3d3d3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 5em;
+  padding-right: 2em;
+  color: #d3d3d3;
 }
 
 .logo {
