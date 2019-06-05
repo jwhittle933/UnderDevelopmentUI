@@ -17,7 +17,6 @@ export const MenuIcon = {
   },
 }
 export default MenuIcon
-import Menu from '../Layout/Menu.vue'
 </script>
 
 <style scoped>

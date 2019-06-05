@@ -77,7 +77,7 @@ export default Header
 }
 
 .logo {
-  position: fixed; 
+  position: fixed;
   top: 4%;
   left: 40%;
   font-family: 'Nunito', sans-serif;
