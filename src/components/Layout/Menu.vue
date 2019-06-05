@@ -16,7 +16,7 @@
 </template>
 
 <script>
-export default {  
+export const Menu = {  
   name: 'Menu',
   data () {
     return {
@@ -28,6 +28,7 @@ export default {
     }
   },
 }
+export default Menu
 </script>
 
 <style scoped>

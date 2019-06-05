@@ -7,12 +7,13 @@
       Login
       <UserIcon></UserIcon>
     </div>
+      <Menu></Menu>
   </div>
 </template>
 
 <script>
 import { UserIcon } from '../Shared'
-import Menu from './Menu.vue'
+import { Menu } from '../Layout'
 
 
 export const Header = {
