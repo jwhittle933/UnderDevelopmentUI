@@ -24,7 +24,8 @@ export default TopPostsTile
 .top-posts-tile {
   overflow: hidden;
   min-height: 12em;
-  width: 275px;
+  width: 16em;
+  margin: 5px;
   cursor: pointer;
   background-color: #d3d3d3;
   color: black;

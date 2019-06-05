@@ -10,7 +10,7 @@
       </p>
     </div>
     <div class="content-block">
-      <div class="top-posts-grid">
+      <div class="top-posts">
         <div class="top-posts-tile-outer" v-for="post in posts" :key="post.id">
           <TopPostsTile v-bind="post"></TopPostsTile>
         </div>
@@ -57,8 +57,6 @@ p {
 
 .top-posts-container {
   display: flex;
-  justify-content: space-between;
-  width: 86em;
   background-color: rgb(0, 0, 0);
   margin: 0;
   padding: 3em;
@@ -67,22 +65,19 @@ p {
 .title-block {
   color: #f1f1f1;
   text-align: left;
-  width: 25%;
   margin: 1em auto;
+  min-width: 20vw;
 }
 
 .content-block {
   color: #f1f1f1;
-  max-width: 70em;
   margin-left: 1em;
 }
 
-.top-posts-grid {
+.top-posts {
   margin-top: 2em;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 0.5em;
-  grid-row-gap: 0.5em;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
 }
 </style>

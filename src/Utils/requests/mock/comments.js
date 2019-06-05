@@ -3,7 +3,7 @@ import { comments } from '@/Utils/fixtures'
 export const getComment = id => {
   return new Promise(resolve => {
     setTimeout(() => {
-      resolve(comments.find(c => c.id === id))
+      resolve(comments.find(c => c.id === parseInt(id)))
     })
   })
 }
