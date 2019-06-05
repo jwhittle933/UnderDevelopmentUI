@@ -1,7 +1,13 @@
 <template>
   <div class="post-view">
-    <div class="post-head">
+    <div
+      class="post-head"
+      :style="{
+        'background-image': 'url(' + image + ')',
+      }"
+    >
       <span class="title">{{ post.title }}</span>
+      <p class="timestamp">{{ formatDate(post.inserted_at) }}</p>
     </div>
   </div>
 </template>
@@ -35,17 +41,20 @@ export default Post
 }
 
 .post-head {
-  height: 60vh;
-  padding: 3em;
-  background: url('../../assets/post.jpeg') center center no-repeat;
+  display: flex;
+  justify-content: center;
+  min-height: 30em;
+  /* background: url('../../assets/post.jpeg') center center no-repeat; */
+  background-position: center center;
   background-size: cover;
+  color: white;
 }
 
 .title {
   font-size: 3em;
+  align-self: center;
 }
-
-.img {
-  width: 100vw;
+.timestamp {
+  align-self: flex-end;
 }
 </style>

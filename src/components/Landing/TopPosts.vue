@@ -57,13 +57,12 @@ p {
 
 .top-posts-container {
   display: flex;
-  background-color: rgb(0, 0, 0);
   margin: 0;
   padding: 3em;
 }
 
 .title-block {
-  color: #f1f1f1;
+  color: #5e5e5e;
   text-align: left;
   margin: 1em auto;
   min-width: 20vw;

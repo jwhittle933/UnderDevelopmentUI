@@ -14,6 +14,32 @@ Vue.directive('scroll', function(el, binding) {
   window.addEventListener('scroll', f)
 })
 
+Vue.mixin({
+  methods: {
+    formatDate: function(dateString) {
+      const yearMonths = [
+        'January',
+        'Febrary',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
+      ]
+      const date = new Date(Date.parse(dateString))
+      const month = date.getMonth()
+      const day = date.getDay()
+      const year = date.getFullYear()
+      return `${yearMonths[month]} ${day}, ${year}`
+    },
+  },
+})
+
 new Vue({
   store,
   router,
