@@ -32,6 +32,12 @@ export default Menu
 </script>
 
 <style scoped>
+  #menu-wrapper {
+    display: flex; 
+    background-color: rgba(0, 0, 0, 0);
+    margin-top: 1em;
+    margin-right: 1em;
+  }
   .menu-links {
     margin: 0 1em; 
     display: inline-block;
@@ -64,13 +70,8 @@ export default Menu
   .dropdown-link {
     display: block; 
   }
-  #menu-wrapper {
-    display: flex; 
-    background-color: rgba(0, 0, 0, 0);
-    margin-top: 1em;
-    margin-right: 1em;
-  }
+
   ul {
-    color:#2c3e50;;
+    color:#2c3e50;
   }
 </style>
