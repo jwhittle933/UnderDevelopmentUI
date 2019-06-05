@@ -15,8 +15,7 @@
 
 <script>
 import { UserIcon } from '../Shared'
-import { Menu } from '../Layout'
-
+import { Menu } from './Menu'
 
 export const Header = {
   name: 'Header',
@@ -68,7 +67,6 @@ export default Header
   background-color: rgba(120, 120, 120, 0.4);
 }
 
-
 .user {
   display: flex;
   justify-content: space-between;
@@ -77,7 +75,6 @@ export default Header
   padding-right: 2em;
   color: #d3d3d3;
 }
-
 
 .logo {
   position: fixed; 
@@ -90,9 +87,9 @@ export default Header
   transition: color 0.3s ease-in;
 }
 
-.menu-wrapper {
-  position: absolute;
-  top: 0; 
-  right: 5; 
-}
+/* .menu-wrapper { */
+/*   position: absolute; */
+/*   top: 0;  */
+/*   right: 5;  */
+/* } */
 </style>
