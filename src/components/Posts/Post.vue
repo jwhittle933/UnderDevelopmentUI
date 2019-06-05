@@ -9,11 +9,19 @@
       <span class="title">{{ post.title }}</span>
       <p class="timestamp">{{ formatDate(post.inserted_at) }}</p>
     </div>
+    <div class="post-main">
+      <div class="post-author">
+        {{ author.name }}
+      </div>
+      <div class="post-body">
+        {{ post.body }}
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import { getPost } from '@/Utils/requests/mock'
+import { getPost, getAuthor } from '@/Utils/requests/mock'
 
 export const Post = {
   name: 'PostView',
@@ -22,13 +30,17 @@ export const Post = {
       loading: true,
       postId: this.$route.params.id,
       post: {},
+      author: {},
       image: require('@/assets/post.jpeg'),
     }
   },
   mounted() {
     getPost(this.$route.params.id).then(p => {
-      this.loading = false
-      this.post = p
+      getAuthor(p.user_id).then(aut => {
+        this.author = aut
+        this.loading = false
+        this.post = p
+      })
     })
   },
 }
@@ -56,5 +68,21 @@ export default Post
 }
 .timestamp {
   align-self: flex-end;
+}
+
+.post-main {
+  display: flex;
+  width: 90%;
+  padding: 3em;
+}
+
+.post-author {
+  max-width: 25em;
+  margin: 0 auto;
+}
+
+.post-body {
+  flex-grow: 2;
+  max-width: 50em;
 }
 </style>
