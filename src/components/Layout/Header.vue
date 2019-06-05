@@ -1,6 +1,6 @@
 <template>
-  <div id="header" class="header">
-    <div class="logo" @click="goHome" v-scroll="scroll">
+  <div id="header" class="header" v-scroll="scroll">
+    <div class="logo" @click="goHome">
       {{ headerText }}
     </div>
     <div class="user">
@@ -30,8 +30,8 @@ export const Header = {
     },
     scroll: function(evt, el) {
       if (window.scrollY > 150) {
-        el.setAttribute('style', 'color: white')
-      } else el.setAttribute('style', 'color: inherit')
+        el.setAttribute('style', 'color: white; background-color:  rgba(120, 120, 120, 0.4)')
+      } else el.setAttribute('style', 'color: #000')
     },
   },
 }
@@ -45,6 +45,7 @@ export default Header
   top: 0;
   left: 0;
   display: flex;
+  color: #000;
   overflow: visible;
   justify-content: space-between;
   align-items: center;
@@ -53,9 +54,6 @@ export default Header
   padding: 1em;
   background-color: rgba(0, 0, 0, 0);
   transition: background-color 0.2s ease-in;
-}
-.header:hover {
-  background-color: rgba(120, 120, 120, 0.4);
 }
 
 .user {
