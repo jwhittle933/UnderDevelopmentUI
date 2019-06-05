@@ -1,9 +1,10 @@
 <template>
-  <div id="header" class="header">
-    <div class="logo" @click="goHome" v-scroll="scroll">
+  <div id="header" class="header" v-scroll="scroll">
+    <div class="logo" @click="goHome">
       {{ headerText }}
     </div>
     <div class="user">
+      Login
       <UserIcon></UserIcon>
     </div>
   </div>
@@ -31,8 +32,11 @@ export const Header = {
     },
     scroll: function(evt, el) {
       if (window.scrollY > 150) {
-        el.setAttribute('style', 'color: white')
-      } else el.setAttribute('style', 'color: inherit')
+        el.setAttribute(
+          'style',
+          'color: white; background-color:  rgba(120, 120, 120, 0.4)',
+        )
+      } else el.setAttribute('style', 'color: #000')
     },
   },
 }
@@ -46,8 +50,7 @@ export default Header
   top: 0;
   left: 0;
   display: flex;
-  flex-direction: row-reverse;
-  flex-wrap: nowrap;
+  color: #000;
   overflow: visible;
   justify-content: space-between;
   align-items: center;
@@ -57,6 +60,7 @@ export default Header
   background-color: rgba(0, 0, 0, 0);
   transition: background-color 0.2s ease-in;
 }
+<<<<<<< HEAD
 .header:hover {
   background-color: rgba(120, 120, 120, 0.4);
 }
@@ -67,7 +71,16 @@ export default Header
 
 .user {
 >>>>>>> master
+=======
+
+.user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 5em;
+>>>>>>> @{-1}
   padding-right: 2em;
+  color: #d3d3d3;
 }
 
 

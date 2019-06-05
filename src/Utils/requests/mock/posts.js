@@ -14,7 +14,7 @@ const errors = ({ title, body, visible, userId }) => {
 export const getPost = postId => {
   return new Promise(resolve => {
     setTimeout(() => {
-      resolve(posts.find(p => p.id === postId))
+      resolve(posts.find(p => p.id === parseInt(postId)))
     }, 0)
   })
 }

@@ -5,7 +5,7 @@ export const getAuthor = userId => {
     setTimeout(() => {
       resolve(
         users.find(({ id, name, bio }) => {
-          if (id === userId) return { id, name, bio }
+          if (id === parseInt(userId)) return { id, name, bio }
         }),
       )
     }, 0)
