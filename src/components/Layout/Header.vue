@@ -89,4 +89,10 @@ export default Header
   color: inherit;
   transition: color 0.3s ease-in;
 }
+
+.menu-wrapper {
+  position: absolute;
+  top: 0; 
+  right: 5; 
+}
 </style>
