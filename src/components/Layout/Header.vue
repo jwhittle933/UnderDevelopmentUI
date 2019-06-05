@@ -60,25 +60,17 @@ export default Header
   background-color: rgba(0, 0, 0, 0);
   transition: background-color 0.2s ease-in;
 }
-<<<<<<< HEAD
+
 .header:hover {
   background-color: rgba(120, 120, 120, 0.4);
 }
-<<<<<<< HEAD
-.nav {
-  display: flex;
-=======
 
-.user {
->>>>>>> master
-=======
 
 .user {
   display: flex;
   justify-content: space-between;
   align-items: center;
   min-width: 5em;
->>>>>>> @{-1}
   padding-right: 2em;
   color: #d3d3d3;
 }
