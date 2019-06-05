@@ -4,6 +4,7 @@
       {{ headerText }}
     </div>
     <div class="user">
+      Login
       <UserIcon></UserIcon>
     </div>
   </div>
@@ -57,7 +58,12 @@ export default Header
 }
 
 .user {
-  padding-right: 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 5em;
+    padding-right: 2em;
+    color: #d3d3d3;
 }
 
 .logo {
