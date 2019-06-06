@@ -25,7 +25,7 @@
         </div>
       </div>
       <div class="post-body">
-        <span>{{ post.body }}</span>
+        <p>{{ post.body }}</p>
       </div>
     </div>
   </div>
@@ -117,6 +117,15 @@ export default Post
 
 .post-body {
   flex-grow: 2;
-  max-width: 60em;
+  max-width: 45em;
+  text-align: left;
+  text-indent: 2em;
+  font-size: 1.3em;
+  line-height: 1.4em;
+}
+
+.post-body > p:first-letter {
+  font-size: 1.5em;
+  line-height: 0;
 }
 </style>
