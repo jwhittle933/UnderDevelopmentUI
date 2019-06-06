@@ -68,7 +68,6 @@ export default Post
   display: flex;
   justify-content: center;
   min-height: 30em;
-  /* background: url('../../assets/post.jpeg') center center no-repeat; */
   background-position: center center;
   background-size: cover;
   color: white;
