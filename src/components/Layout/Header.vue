@@ -80,9 +80,9 @@ export default Header
   transition: color 0.3s ease-in;
 }
 
-/* .menu-wrapper { */
-/*   position: absolute; */
-/*   top: 0;  */
-/*   right: 5;  */
-/* } */
+.menu-wrapper {
+  display: flexbox;
+  align-items: center;
+  justify-content: space-between;
+}
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <nav class="menu-wrapper">
+  <div class="menu-wrapper">
     <div
       class="menu-links"
       @mouseover="infoHover = true"
@@ -7,13 +7,11 @@
     >
       <button>Info</button>
       <ul v-if="infoHover" class="dropdown-menu">
-        <a
-          :href="link"
+        <li
           class="dropdown-link"
           v-for="link in infoLinks"
           :key="link"
-          >{{ link.text }}</a
-        >
+          >{{ link.text }}</li>
       </ul>
     </div>
 
@@ -23,20 +21,19 @@
       @mouseleave="postHover = false"
     >
       <button>Posts</button>
-      <ul v-if="postHover" id="posts-link" class="dropdown-menu">
-        <a
-          :href="link"
+      <ul v-if="postHover" class="dropdown-menu">
+        <li
           class="dropdown-link"
           v-for="link in postLinks"
           :key="link"
-          >{{ link.text }}</a
+          >{{ link.text }}</li
         >
       </ul>
     </div>
     <div class="menu-links">
       <button>Contact Us</button>
     </div>
-  </nav>
+  </div>
 </template>
 
 <script>
@@ -77,34 +74,42 @@ export default Menu
 </script>
 
 <style scoped>
-button {
-  height: 30px;
-  width: 60px;
-  border: none;
-  color: inherit;
-  background-color: inherit; 
-}
+
 .menu-wrapper {
   display: flex;
+  justify-content: space-between;
+  align-content: center;
+  position: relative;
   background-color: rgba(0, 0, 0, 0);
   margin-right: 1em;
+  justify-content: space-between;
 }
+
 .menu-links {
-  margin: 0 1em;
-  display: inline-block;
-  padding: 0.5em 1em;
-  color: #2c3e50;
+  display: flexbox;
+  padding: 0 1em;
+  color: #000;
   text-decoration: none;
   font-weight: bold;
 }
 
+button {
+  height: 30px;
+  width: 75px;
+  border: none;
+  color: inherit;
+  background-color: inherit;
+  font-size: 1.1em; 
+}
+
 .dropdown-menu {
-  padding-top: 1.5em;
-  padding-right: 0.5em;
-  padding-left: 0.5em;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   color: inherit;
   text-decoration: none;
-  background-color: rgba(120, 120, 120, 0.4);
+  background-color: inherit;
 }
 
 .dropdown-link {
@@ -112,6 +117,6 @@ button {
 }
 
 ul {
-  color: #2c3e50;
+  color: #000;
 }
 </style>
