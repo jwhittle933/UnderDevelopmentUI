@@ -67,7 +67,7 @@ export default Header
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-width: 5em;
+  min-width: 6em;
   padding-right: 2em;
   color: #d3d3d3;
 }

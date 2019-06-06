@@ -22,8 +22,6 @@ export default UserIcon
 
 <style scoped>
 .user-icon {
-  margin-top: 1em;
   width: 30px;
-  height: 30px;
 }
 </style>
