@@ -12,7 +12,7 @@
           class="dropdown-link"
           v-for="link in infoLinks"
           :key="link"
-          >{{ link }}</a
+          >{{ link.text }}</a
         >
       </ul>
     </div>
@@ -29,7 +29,7 @@
           class="dropdown-link"
           v-for="link in postLinks"
           :key="link"
-          >{{ link }}</a
+          >{{ link.text }}</a
         >
       </ul>
     </div>
@@ -45,8 +45,29 @@ export const Menu = {
   data() {
     return {
       links: [`Info`, `Posts`, `Contact Us`],
-      infoLinks: ['About Us', 'Authors'],
-      postLinks: ['Top Posts', 'Development', 'Christian Living'],
+      infoLinks: [
+        {
+          text: 'About Us',
+          path: '/about-us'
+        },
+        {
+          text: 'Authors',
+          path: '/authors'
+        }
+        ],
+      postLinks: [
+        {
+          text: 'Top Posts', 
+          path: '/top-posts'
+        },
+        {
+          text: 'Development',
+          path: '/development'
+        },
+        { text: 'Christian Living',
+          path: 'christian-living'
+        }
+      ],
       infoHover: false,
       postHover: false,
     }
