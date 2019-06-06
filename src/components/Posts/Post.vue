@@ -11,10 +11,13 @@
     </div>
     <div class="post-main">
       <div class="post-author">
-        {{ author.name }}
+        <div class="post-author-outer">
+          <div class="post-author-name">{{ author.name }}</div>
+          <div class="post-author-content">{{ author.bio }}</div>
+        </div>
       </div>
       <div class="post-body">
-        {{ post.body }}
+        <span>{{ post.body }}</span>
       </div>
     </div>
   </div>
@@ -81,8 +84,19 @@ export default Post
   margin: 0 auto;
 }
 
+.post-author-outer {
+  width: 15em;
+  margin: 0 auto;
+  border: 2px solid blue;
+}
+
+.post-author-name {
+  width: auto;
+  border: 1px solid magenta;
+}
+
 .post-body {
   flex-grow: 2;
-  max-width: 50em;
+  max-width: 60em;
 }
 </style>
