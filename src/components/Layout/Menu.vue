@@ -5,8 +5,8 @@
       @mouseover="infoHover = true"
       @mouseleave="infoHover = false"
     >
-      <li><a href="/info">Info</a></li>
-      <ul v-if="infoHover" class="info-link dropdown-menu">
+      <button>Info</button>
+      <ul v-if="infoHover" class="dropdown-menu">
         <a
           :href="link"
           class="dropdown-link"
@@ -22,7 +22,7 @@
       @mouseover="postHover = true"
       @mouseleave="postHover = false"
     >
-      <li><a href="/posts">Posts</a></li>
+      <button>Posts</button>
       <ul v-if="postHover" id="posts-link" class="dropdown-menu">
         <a
           :href="link"
@@ -34,7 +34,7 @@
       </ul>
     </div>
     <div class="menu-links">
-      <li><a href="/contact">Contact Us</a></li>
+      <button>Contact Us</button>
     </div>
   </nav>
 </template>
@@ -77,6 +77,13 @@ export default Menu
 </script>
 
 <style scoped>
+button {
+  height: 30px;
+  width: 60px;
+  border: none;
+  color: inherit;
+  background-color: inherit; 
+}
 .menu-wrapper {
   display: flex;
   background-color: rgba(0, 0, 0, 0);
@@ -90,12 +97,8 @@ export default Menu
   text-decoration: none;
   font-weight: bold;
 }
-.menu-links a {
-  color: inherit;
-  text-decoration: inherit;
-}
+
 .dropdown-menu {
-  position: absolute;
   padding-top: 1.5em;
   padding-right: 0.5em;
   padding-left: 0.5em;
@@ -103,14 +106,7 @@ export default Menu
   text-decoration: none;
   background-color: rgba(120, 120, 120, 0.4);
 }
-.info-link {
-  top: 19%;
-  right: 23%;
-}
-#posts-link {
-  top: 18%;
-  right: 13%;
-}
+
 .dropdown-link {
   display: block;
 }
