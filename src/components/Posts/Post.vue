@@ -12,8 +12,16 @@
     <div class="post-main">
       <div class="post-author">
         <div class="post-author-outer">
+          <div
+            class="post-author-image"
+            :style="{
+              'background-image': 'url(' + authorImage + ')',
+            }"
+          >
+            &nbsp;
+          </div>
           <div class="post-author-name">{{ author.name }}</div>
-          <div class="post-author-content">{{ author.bio }}</div>
+          <p class="post-author-bio">{{ author.bio }}</p>
         </div>
       </div>
       <div class="post-body">
@@ -35,6 +43,7 @@ export const Post = {
       post: {},
       author: {},
       image: require('@/assets/post.jpeg'),
+      authorImage: require('@/assets/prof.jpg'),
     }
   },
   mounted() {
@@ -77,6 +86,7 @@ export default Post
   display: flex;
   width: 90%;
   padding: 3em;
+  margin-top: 3em;
 }
 
 .post-author {
@@ -87,12 +97,22 @@ export default Post
 .post-author-outer {
   width: 15em;
   margin: 0 auto;
-  border: 2px solid blue;
+}
+
+.post-author-image {
+  height: 15em;
+  border-radius: 50em;
+  background-position: top center;
+  background-size: cover;
 }
 
 .post-author-name {
+  font-size: 2em;
   width: auto;
-  border: 1px solid magenta;
+}
+
+.post-author-bio {
+  text-align: left;
 }
 
 .post-body {

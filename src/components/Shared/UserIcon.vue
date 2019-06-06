@@ -24,5 +24,6 @@ export default UserIcon
 .user-icon {
   width: 30px;
   height: 30px;
+  cursor: pointer;
 }
 </style>

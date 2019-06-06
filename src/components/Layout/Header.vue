@@ -66,6 +66,7 @@ export default Header
   align-items: center;
   min-width: 5em;
   padding-right: 2em;
+  cursor: pointer;
   color: #d3d3d3;
 }
 
