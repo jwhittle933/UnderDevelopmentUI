@@ -89,12 +89,12 @@ export default Post
 }
 
 .post-author {
-  max-width: 25em;
+  width: 25em;
   margin: 0 auto;
 }
 
 .post-author-outer {
-  width: 15em;
+  width: 25em;
   margin: 0 auto;
 }
 
@@ -103,6 +103,8 @@ export default Post
   border-radius: 50em;
   background-position: top center;
   background-size: cover;
+  width: 15em;
+  margin: 0 auto;
 }
 
 .post-author-name {
@@ -111,7 +113,9 @@ export default Post
 }
 
 .post-author-bio {
-  text-align: left;
+  /* text-align: left; */
+  width: 20em;
+  margin: 0 auto;
 }
 
 .post-body {
