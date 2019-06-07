@@ -1,6 +1,12 @@
 <template>
   <div class="post-menu">
-    <div class="post-select">Select a Category</div>
+    <div class="post-select">
+      <select>
+        <option v-for="option in selectOptions" :key="option.valuef">
+          {{ option.label }}
+        </option>
+      </select>
+    </div>
     <div class="post-search">Search</div>
   </div>
 </template>
@@ -11,6 +17,10 @@ export const PostsMenu = {
   data() {
     return {
       selectOptions: [
+        {
+          label: 'Select a Topic',
+          value: 'default',
+        },
         {
           label: 'Christian Living',
           value: 'cl',
