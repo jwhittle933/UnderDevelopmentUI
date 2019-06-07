@@ -57,6 +57,7 @@ export default Header
   max-height: 2em;
   padding: 1em;
   background-color: rgba(0, 0, 0, 0);
+  z-index: 1000;
   transition: background-color 0.2s ease-in;
 }
 

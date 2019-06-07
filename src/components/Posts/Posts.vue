@@ -7,6 +7,7 @@
       }"
     >
       <span class="head-text">All Posts</span>
+      <PostsMenu></PostsMenu>
     </div>
     <div class="posts-wrapper">
       <!-- <div class="post-tiles" v-for="post in posts" :key="post.id"> -->
@@ -18,9 +19,13 @@
 
 <script>
 import { getAllPosts } from '@/Utils/requests/mock'
+import { PostsMenu } from './PostsMenu'
 
 export const Posts = {
   name: 'PostsView',
+  components: {
+    PostsMenu,
+  },
   data() {
     return {
       posts: [],
@@ -38,6 +43,7 @@ export default Posts
 <style scoped>
 .posts-head {
   display: flex;
+  position: relative;
   width: 100%;
   height: 30em;
   background-position: center center;
