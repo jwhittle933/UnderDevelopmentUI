@@ -53,7 +53,7 @@ export default PostsMenu
   left: 0;
   width: 100%;
   height: 5em;
-  background-color: rgba(120, 120, 120, 0.4);
+  background-color: rgba(120, 120, 120, 0.5);
 }
 
 .post-select {
