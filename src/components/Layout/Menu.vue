@@ -6,7 +6,7 @@
             @mouseover="infoHover = false"
             @mouseleave="infoHover = false"
             >
-            <div class="main-link">Info</div>
+            <div class="main-link" @click="goInfo">Info</div>
             <ul v-if="infoHover" class="dropdown-menu">
                 <li
                 class="dropdown-link"
@@ -21,7 +21,7 @@
             @mouseover="postHover = false"
             @mouseleave="postHover = false"
             >
-            <div class="main-link">Posts</div>
+            <div class="main-link" @click="goPosts">Posts</div>
             <ul v-if="postHover" class="dropdown-menu">
                 <li
                 class="dropdown-link"
@@ -32,7 +32,7 @@
             </ul>
             </div>
             <div class="menu-links">
-            <div class="main-link">Contact Us</div>
+            <div class="main-link" @click="goContact">Contact Us</div>
             </div>
         </div>
   </div>
@@ -82,7 +82,19 @@ export const Menu = {
       unrollMenu: false, 
     }
   },
+  methods: {
+        goInfo: function() {
+            this.$router.push('/info')
+        },
+        goPosts: function() {
+            this.$router.push('/posts')
+        },
+        goContact: function() {
+            this.$router.push('/contact-us')
+        }
+    }
 }
+
 export default Menu
 </script>
 
