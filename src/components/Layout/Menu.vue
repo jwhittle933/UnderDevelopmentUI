@@ -7,7 +7,7 @@
     <div v-if="unrollMenu" class="menu-wrapper-inner">
         <div
         class="menu-links"
-        @mouseover="infoHover = true"
+        @mouseover="infoHover = false"
         @mouseleave="infoHover = false"
         >
         <div class="main-link">Info</div>
@@ -22,7 +22,7 @@
 
         <div
         class="menu-links"
-        @mouseover="postHover = true"
+        @mouseover="postHover = false"
         @mouseleave="postHover = false"
         >
         <div class="main-link">Posts</div>
