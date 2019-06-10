@@ -1,38 +1,45 @@
 <template>
-  <div class="menu-wrapper">
-    <div
-      class="menu-links"
-      @mouseover="infoHover = true"
-      @mouseleave="infoHover = false"
-    >
-      <button>Info</button>
-      <ul v-if="infoHover" class="dropdown-menu">
-        <li
-          class="dropdown-link"
-          v-for="link in infoLinks"
-          :key="link"
-          >{{ link.text }}</li>
-      </ul>
+  <div class="menu-wrapper-outer">
+    <div class="menu-button" @click="unrollMenu = !unrollMenu">
+        <span>Menu</span>
     </div>
-
-    <div
-      class="menu-links"
-      @mouseover="postHover = true"
-      @mouseleave="postHover = false"
-    >
-      <button>Posts</button>
-      <ul v-if="postHover" class="dropdown-menu">
-        <li
-          class="dropdown-link"
-          v-for="link in postLinks"
-          :key="link"
-          >{{ link.text }}</li
+    <transition name="slide-in-left">
+    <div v-if="unrollMenu" class="menu-wrapper-inner">
+        <div
+        class="menu-links"
+        @mouseover="infoHover = true"
+        @mouseleave="infoHover = false"
         >
-      </ul>
+        <div class="main-link">Info</div>
+        <ul v-if="infoHover" class="dropdown-menu">
+            <li
+            class="dropdown-link"
+            v-for="link in infoLinks"
+            :key="link"
+            >{{ link.text }}</li>
+        </ul>
+        </div>
+
+        <div
+        class="menu-links"
+        @mouseover="postHover = true"
+        @mouseleave="postHover = false"
+        >
+        <div class="main-link">Posts</div>
+        <ul v-if="postHover" class="dropdown-menu">
+            <li
+            class="dropdown-link"
+            v-for="link in postLinks"
+            :key="link"
+            >{{ link.text }}</li
+            >
+        </ul>
+        </div>
+        <div class="menu-links">
+        <div class="main-link">Contact Us</div>
+        </div>
     </div>
-    <div class="menu-links">
-      <button>Contact Us</button>
-    </div>
+    </transition>
   </div>
 </template>
 
@@ -67,6 +74,7 @@ export const Menu = {
       ],
       infoHover: false,
       postHover: false,
+      unrollMenu: false, 
     }
   },
 }
@@ -75,15 +83,30 @@ export default Menu
 
 <style scoped>
 
-.menu-wrapper {
+.menu-wrapper-outer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-content: center;
   position: relative;
   background-color: rgba(0, 0, 0, 0);
   margin-right: 1em;
-  justify-content: space-between;
 }
+
+.menu-wrapper-inner {
+    background-color: #EEE; 
+}
+
+.menu-button {
+    display: flex; 
+    justify-content: center; 
+    flex-direction: column; 
+    border-radius: 50%;
+    height: 75px;
+    width: 75px; 
+    background-color: #EEE; 
+    font-size: 1.25em; 
+}
+
 
 .menu-links {
   display: flexbox;
@@ -93,7 +116,7 @@ export default Menu
   font-weight: bold;
 }
 
-button {
+.main-link {
   height: 30px;
   width: 75px;
   border: none;
@@ -119,4 +142,15 @@ button {
 ul {
   color: #000;
 }
+
+.slide-in-left-enter-active, .slide-in-left-leave-active {
+    transition: .5s;
+}
+
+.slide-in-left-enter {
+    transform: translate(100%, 0);
+}
+
+ .slide-in-left-leave-to {
+    transform: translate(100%, 0); }
 </style>
