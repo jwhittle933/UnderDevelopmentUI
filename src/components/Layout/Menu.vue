@@ -1,45 +1,40 @@
 <template>
   <div class="menu-wrapper-outer">
-    <div class="menu-button" @click="unrollMenu = !unrollMenu">
-        <span>Menu</span>
-    </div>
-    <transition name="slide-in-left">
-    <div v-if="unrollMenu" class="menu-wrapper-inner">
-        <div
-        class="menu-links"
-        @mouseover="infoHover = false"
-        @mouseleave="infoHover = false"
-        >
-        <div class="main-link">Info</div>
-        <ul v-if="infoHover" class="dropdown-menu">
-            <li
-            class="dropdown-link"
-            v-for="link in infoLinks"
-            :key="link"
-            >{{ link.text }}</li>
-        </ul>
-        </div>
-
-        <div
-        class="menu-links"
-        @mouseover="postHover = false"
-        @mouseleave="postHover = false"
-        >
-        <div class="main-link">Posts</div>
-        <ul v-if="postHover" class="dropdown-menu">
-            <li
-            class="dropdown-link"
-            v-for="link in postLinks"
-            :key="link"
-            >{{ link.text }}</li
+        <div class="menu-wrapper-inner">
+            <div
+            class="menu-links"
+            @mouseover="infoHover = false"
+            @mouseleave="infoHover = false"
             >
-        </ul>
+            <div class="main-link">Info</div>
+            <ul v-if="infoHover" class="dropdown-menu">
+                <li
+                class="dropdown-link"
+                v-for="link in infoLinks"
+                :key="link"
+                >{{ link.text }}</li>
+            </ul>
+            </div>
+
+            <div
+            class="menu-links"
+            @mouseover="postHover = false"
+            @mouseleave="postHover = false"
+            >
+            <div class="main-link">Posts</div>
+            <ul v-if="postHover" class="dropdown-menu">
+                <li
+                class="dropdown-link"
+                v-for="link in postLinks"
+                :key="link"
+                >{{ link.text }}</li
+                >
+            </ul>
+            </div>
+            <div class="menu-links">
+            <div class="main-link">Contact Us</div>
+            </div>
         </div>
-        <div class="menu-links">
-        <div class="main-link">Contact Us</div>
-        </div>
-    </div>
-    </transition>
   </div>
 </template>
 
@@ -90,23 +85,15 @@ export default Menu
   position: relative;
   background-color: rgba(0, 0, 0, 0);
   margin-right: 1em;
+  cursor: pointer;
 }
 
 .menu-wrapper-inner {
-    background-color: #EEE; 
-}
-
-.menu-button {
     display: flex; 
-    justify-content: center; 
     flex-direction: column; 
-    border-radius: 50%;
-    height: 75px;
-    width: 75px; 
+    justify-content: space-between;
     background-color: #EEE; 
-    font-size: 1.25em; 
 }
-
 
 .menu-links {
   display: flexbox;
@@ -143,14 +130,4 @@ ul {
   color: #000;
 }
 
-.slide-in-left-enter-active, .slide-in-left-leave-active {
-    transition: .5s;
-}
-
-.slide-in-left-enter {
-    transform: translate(100%, 0);
-}
-
- .slide-in-left-leave-to {
-    transform: translate(100%, 0); }
 </style>

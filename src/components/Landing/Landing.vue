@@ -6,9 +6,16 @@
         'background-image': 'url(' + image + ')',
       }"
     >
-      <div class="menu-wrapper">
+      <transition name="button-slide">
+      <div class="menu-button" @click="unrollMenu = !unrollMenu">
+          <span>Menu</span>
+      </div>
+      </transition>
+      <transition name="slide">
+      <div v-if="unrollMenu" class="menu-wrapper">
         <Menu></Menu>
       </div>
+      </transition>
     </div>
     <TopPosts></TopPosts>
   </div>
@@ -27,6 +34,7 @@ export const Landing = {
   data() {
     return {
       image: require('@/assets/splash.jpg'),
+      unrollMenu: false,
     }
   },
 }
@@ -51,9 +59,51 @@ export default Landing
   margin: 0;
 }
 
+.menu-button {
+    display: flex; 
+    justify-content: center; 
+    flex-direction: column; 
+    border-radius: 50%;
+    height: 75px;
+    width: 75px; 
+    background-color: #EEE; 
+    font-size: 1.25em; 
+    margin-bottom: 5em;
+    margin-right: 5em; 
+    cursor: pointer;
+}
+
 .menu-wrapper {
   display: flex; 
-  margin-bottom: 5em; 
+  height: 300px;
+  margin-bottom: 10em; 
+  margin-right: 0; 
+}
+
+/* Transitions */
+
+.slide-enter-active, .slide-leave-active {
+  transition: .5s;
+}
+
+.slide-enter {
+  transform: translate(100%, 0); 
+}
+
+ .slide-leave-to {
+  transform: translate(100%, 0);
+}
+
+.button-slide-enter-active, .button-slide-leave-active {
+  transition: .5s ease;
+}
+
+.button-slide-enter {
   margin-right: 5em; 
 }
+
+.button-slide-leave-to {
+  margin-right: 1em; 
+}
+
 </style>
