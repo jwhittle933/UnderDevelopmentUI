@@ -57,6 +57,7 @@ export default Header
   max-height: 2em;
   padding: 1em;
   background-color: rgba(0, 0, 0, 0);
+  z-index: 1000;
   transition: background-color 0.2s ease-in;
 }
 
@@ -66,6 +67,7 @@ export default Header
   align-items: center;
   min-width: 5em;
   padding-right: 2em;
+  cursor: pointer;
   color: #d3d3d3;
 }
 
