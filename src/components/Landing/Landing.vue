@@ -64,12 +64,12 @@ export default Landing
     justify-content: center; 
     flex-direction: column; 
     border-radius: 50%;
-    height: 75px;
-    width: 75px; 
+    height: 100px;
+    width: 100px; 
     background-color: #EEE; 
     font-size: 1.25em; 
     margin-bottom: 5em;
-    margin-right: 5em; 
+    margin-right: 3em; 
     cursor: pointer;
 }
 
