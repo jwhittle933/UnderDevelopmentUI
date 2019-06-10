@@ -3,9 +3,7 @@
     <div class="logo" @click="goHome">
       {{ headerText }}
     </div>
-    <div class="menu-wrapper">
-      <Menu></Menu>
-    </div>
+
     <div class="user">
       Login
       <UserIcon></UserIcon>
@@ -20,7 +18,6 @@ import { Menu } from './Menu'
 export const Header = {
   name: 'Header',
   components: {
-    Menu,
     UserIcon,
   },
   data() {
@@ -80,11 +77,5 @@ export default Header
   cursor: pointer;
   color: inherit;
   transition: color 0.3s ease-in;
-}
-
-.menu-wrapper {
-  display: flexbox;
-  align-items: center;
-  justify-content: space-between;
 }
 </style>
