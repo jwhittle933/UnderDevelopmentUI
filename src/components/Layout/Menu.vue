@@ -43,7 +43,17 @@ export const Menu = {
   name: 'Menu',
   data() {
     return {
-      links: [`Info`, `Posts`, `Contact Us`],
+      links: [
+          { name: `Info`,
+            path: '/info'
+          }, 
+          { name: `Posts`,
+            path: '/posts'
+          }, 
+          { name: `Contact Us`,
+            path: '/contact-us'
+          }
+        ],
       infoLinks: [
         {
           text: 'About Us',
