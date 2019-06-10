@@ -11,8 +11,12 @@
     </div>
     <div class="content-block">
       <div class="top-posts">
-        <div class="top-posts-tile-outer" v-for="post in posts" :key="post.id">
-          <TopPostsTile v-bind="post"></TopPostsTile>
+        <div
+          class="top-posts-tile-outer"
+          v-for="(post, i) in posts"
+          :key="post.id"
+        >
+          <TopPostsTile v-bind="post" v-if="i < 8"></TopPostsTile>
         </div>
       </div>
     </div>

@@ -11,10 +11,21 @@
     </div>
     <div class="post-main">
       <div class="post-author">
-        {{ author.name }}
+        <div class="post-author-outer">
+          <div
+            class="post-author-image"
+            :style="{
+              'background-image': 'url(' + authorImage + ')',
+            }"
+          >
+            &nbsp;
+          </div>
+          <div class="post-author-name">{{ author.name }}</div>
+          <p class="post-author-bio">{{ author.bio }}</p>
+        </div>
       </div>
       <div class="post-body">
-        {{ post.body }}
+        <p>{{ post.body }}</p>
       </div>
     </div>
   </div>
@@ -32,6 +43,7 @@ export const Post = {
       post: {},
       author: {},
       image: require('@/assets/post.jpeg'),
+      authorImage: require('@/assets/prof.jpg'),
     }
   },
   mounted() {
@@ -56,7 +68,6 @@ export default Post
   display: flex;
   justify-content: center;
   min-height: 30em;
-  /* background: url('../../assets/post.jpeg') center center no-repeat; */
   background-position: center center;
   background-size: cover;
   color: white;
@@ -74,15 +85,50 @@ export default Post
   display: flex;
   width: 90%;
   padding: 3em;
+  margin-top: 3em;
 }
 
 .post-author {
-  max-width: 25em;
+  width: 25em;
+  margin: 0 auto;
+}
+
+.post-author-outer {
+  width: 25em;
+  margin: 0 auto;
+}
+
+.post-author-image {
+  height: 15em;
+  border-radius: 50em;
+  background-position: top center;
+  background-size: cover;
+  width: 15em;
+  margin: 0 auto;
+}
+
+.post-author-name {
+  font-size: 2em;
+  width: auto;
+}
+
+.post-author-bio {
+  /* text-align: left; */
+  width: 20em;
   margin: 0 auto;
 }
 
 .post-body {
   flex-grow: 2;
-  max-width: 50em;
+  max-width: 45em;
+  text-align: left;
+  text-indent: 2em;
+  font-size: 1.3em;
+  line-height: 1.4em;
+}
+
+.post-body > p:first-letter {
+  font-size: 1.5em;
+  line-height: 0;
 }
 </style>
