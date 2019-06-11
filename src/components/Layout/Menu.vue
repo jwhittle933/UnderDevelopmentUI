@@ -64,7 +64,7 @@ export default Menu
   flex-direction: column;
   justify-content: space-between;
   background-color: rgba(0, 0, 0, 0);
-  margin-left: 0.5em;
+  margin-left: 0.7em;
 }
 
 .menu-links {
