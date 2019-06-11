@@ -76,7 +76,7 @@ export default Landing
 
 .slide-enter-active,
 .slide-leave-active {
-  transition: 0.5s;
+  transition: 0.7s;
 }
 
 .slide-enter {

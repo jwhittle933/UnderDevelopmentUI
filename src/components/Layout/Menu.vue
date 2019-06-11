@@ -7,7 +7,7 @@
           <li class="dropdown-link" v-for="link in infoLinks" :key="link">{{ link.text }}</li>
         </ul>
       </div>
-      <div class="menu-links" @mouseover="postHover = false" @mouseleave="postHover = false">
+      <div class="menu-links" @mouseover="postHover = true" @mouseleave="postHover = false">
         <div class="main-link" @click="goPosts">Posts</div>
         <ul v-if="postHover" class="dropdown-menu">
           <li class="dropdown-link" v-for="link in postLinks" :key="link">{{ link.text }}</li>
@@ -105,6 +105,7 @@ export default Menu
   padding-bottom: 1.75em;
   border: none;
   color: inherit;
+  position: relative;
   background-color: inherit;
   font-size: 1.1em;
 }
@@ -113,14 +114,18 @@ export default Menu
   padding: 0;
   margin: 0;
   position: absolute;
+  left: 6.5em;
+  top: 0;
+  height: 100px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   color: inherit;
   text-decoration: none;
-  background-color: inherit;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .dropdown-link {
   display: block;
+  padding-bottom: 1em;
 }
 
 ul {
