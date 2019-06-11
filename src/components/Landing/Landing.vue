@@ -44,7 +44,7 @@ export default Landing
 .bg-image-wrapper {
   display: flex;
   align-items: flex-end;
-  justify-content: flex-end;
+  justify-content: flex-start;
   position: relative;
   min-height: 40em;
   margin: 0;
@@ -69,8 +69,8 @@ export default Landing
 
 .menu-wrapper {
   display: flex;
-  height: 300px;
-  margin-bottom: 10em;
+  height: 150px;
+  margin-bottom: 8em;
   margin-right: 0;
 }
 

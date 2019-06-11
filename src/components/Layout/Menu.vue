@@ -114,13 +114,14 @@ export default Menu
     display: flex; 
     flex-direction: column; 
     justify-content: space-between;
-    background-color: #EEE; 
+    background-color: rgba(0,0,0,0);
+    margin-left: 2em;  
 }
 
 .menu-links {
   display: flexbox;
   padding: 0 1em;
-  color: #000;
+  color: #eee;
   text-decoration: none;
   font-weight: bold;
 }
@@ -128,6 +129,7 @@ export default Menu
 .main-link {
   height: 30px;
   width: 75px;
+  padding-bottom: 1.75em; 
   border: none;
   color: inherit;
   background-color: inherit;
@@ -149,7 +151,7 @@ export default Menu
 }
 
 ul {
-  color: #000;
+  color: #eee;
 }
 
 </style>
