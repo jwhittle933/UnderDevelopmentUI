@@ -13,6 +13,7 @@ module.exports = {
     'no-unused-vars': 1,
     'no-undef': 1,
     'eol-last': 1,
+    "indent": [1, 2]
   },
   parserOptions: {
     parser: "babel-eslint"
