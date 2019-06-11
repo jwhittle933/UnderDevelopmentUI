@@ -34,5 +34,3 @@ export default InfoIcon
   fill: white;
 }
 </style>
-
-

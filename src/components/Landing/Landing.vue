@@ -20,7 +20,6 @@
 <script>
 import { TopPosts } from './TopPosts'
 import { Menu } from '../Layout'
-import { InfoIcon, PostsIcon, ContactIcon } from '../Shared'
 
 export const Landing = {
   name: 'LandingView',
