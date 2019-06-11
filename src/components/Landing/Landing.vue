@@ -80,10 +80,10 @@ export default Landing
 }
 
 .slide-enter {
-  transform: translate(0, 100%);
+  transform: translate(-100%, 0%) scale(0.01);
 }
 
 .slide-leave-to {
-  transform: translate(0, 100%);
+  transform: translate(-100%, 0%) scale(0.01);
 }
 </style>
