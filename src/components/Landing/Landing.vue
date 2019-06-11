@@ -68,7 +68,7 @@ export default Landing
 .menu-wrapper {
   display: flex;
   height: 150px;
-  margin-bottom: 8em;
+  margin-bottom: 5em;
   margin-right: 0;
 }
 
