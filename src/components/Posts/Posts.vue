@@ -7,6 +7,7 @@
       }"
     >
       <span class="head-text">All Posts</span>
+      <div class="post-create">C</div>
       <PostsMenu></PostsMenu>
     </div>
     <div class="posts-wrapper">
@@ -54,5 +55,18 @@ export default Posts
   font-size: 5em;
   align-self: center;
   margin-left: 2em;
+}
+
+.post-create {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  background-color: #eee;
 }
 </style>
