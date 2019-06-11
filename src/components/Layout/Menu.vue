@@ -1,19 +1,9 @@
 <template>
   <div class="menu-wrapper-outer">
     <div class="menu-wrapper-inner">
-      <div class="menu-links" @mouseover="infoHover = true" @mouseleave="infoHover = false">
-        <div class="main-link" @click="goInfo">Info</div>
-        <ul v-if="infoHover" class="dropdown-menu">
-          <li class="dropdown-link" v-for="link in infoLinks" :key="link">{{ link.text }}</li>
-        </ul>
-      </div>
-      <div class="menu-links" @mouseover="postHover = true" @mouseleave="postHover = false">
-        <div class="main-link" @click="goPosts">Posts</div>
-        <ul v-if="postHover" class="dropdown-menu">
-          <li class="dropdown-link" v-for="link in postLinks" :key="link">{{ link.text }}</li>
-        </ul>
-      </div>
       <div class="menu-links">
+        <div class="main-link" @click="goInfo">Info</div>
+        <div class="main-link" @click="goPosts">Posts</div>
         <div class="main-link" @click="goContact">Contact Us</div>
       </div>
     </div>
@@ -23,39 +13,6 @@
 <script>
 export const Menu = {
   name: 'Menu',
-  data() {
-    return {
-      links: [
-        { name: `Info`, path: '/info' },
-        { name: `Posts`, path: '/posts' },
-        { name: `Contact Us`, path: '/contact-us' },
-      ],
-      infoLinks: [
-        {
-          text: 'About Us',
-          path: '/about-us',
-        },
-        {
-          text: 'Authors',
-          path: '/authors',
-        },
-      ],
-      postLinks: [
-        {
-          text: 'Top Posts',
-          path: '/top-posts',
-        },
-        {
-          text: 'Development',
-          path: '/development',
-        },
-        { text: 'Christian Living', path: 'christian-living' },
-      ],
-      infoHover: false,
-      postHover: false,
-      unrollMenu: false,
-    }
-  },
   methods: {
     goInfo: function() {
       this.$router.push('/info')
@@ -108,27 +65,5 @@ export default Menu
   position: relative;
   background-color: inherit;
   font-size: 1.1em;
-}
-
-.dropdown-menu {
-  padding: 0;
-  margin: 0;
-  position: absolute;
-  left: 6.7em;
-  top: 0;
-  height: auto;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  color: inherit;
-  text-decoration: none;
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-.dropdown-link {
-  display: block;
-  padding-bottom: 1em;
-}
-
-ul {
-  color: #eee;
 }
 </style>
