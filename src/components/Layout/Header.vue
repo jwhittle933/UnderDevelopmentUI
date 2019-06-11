@@ -13,7 +13,6 @@
 
 <script>
 import { UserIcon } from '../Shared'
-import { Menu } from './Menu'
 
 export const Header = {
   name: 'Header',

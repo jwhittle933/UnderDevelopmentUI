@@ -1,2 +1,5 @@
 export * from './MenuIcon'
 export * from './UserIcon'
+export * from './ContactIcon'
+export * from './PostsIcon'
+export * from './InfoIcon'
