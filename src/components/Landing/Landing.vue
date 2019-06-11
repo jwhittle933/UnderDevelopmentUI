@@ -89,16 +89,4 @@ export default Landing
   transform: translate(0, 100%);
 }
 
-.button-slide-enter-active,
-.button-slide-leave-active {
-  transition: 0.5s ease;
-}
-
-.button-slide-enter {
-  margin-right: 5em;
-}
-
-.button-slide-leave-to {
-  margin-right: 1em;
-}
 </style>
