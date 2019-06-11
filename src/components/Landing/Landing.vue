@@ -6,12 +6,12 @@
         'background-image': 'url(' + image + ')',
       }"
     >
-        <div class="menu-button" @click="unrollMenu = !unrollMenu">
-          Menu
-        </div>
+      <div class="menu-button" @click="unrollMenu = !unrollMenu">Menu</div>
+      <transition name="slide">
         <div v-if="unrollMenu" class="menu-wrapper">
           <Menu></Menu>
         </div>
+      </transition>
     </div>
     <TopPosts></TopPosts>
   </div>
