@@ -3,6 +3,7 @@
     <div class="logo" @click="goHome">
       {{ headerText }}
     </div>
+
     <div class="user">
       Login
       <UserIcon></UserIcon>
@@ -11,13 +12,12 @@
 </template>
 
 <script>
-import { MenuIcon } from '../Shared'
 import { UserIcon } from '../Shared'
+import { Menu } from './Menu'
 
 export const Header = {
   name: 'Header',
   components: {
-    MenuIcon,
     UserIcon,
   },
   data() {
@@ -49,10 +49,10 @@ export default Header
   top: 0;
   left: 0;
   display: flex;
-  color: #000;
-  overflow: visible;
   justify-content: space-between;
   align-items: center;
+  color: #000;
+  overflow: visible;
   width: 100%;
   max-height: 2em;
   padding: 1em;
@@ -65,7 +65,7 @@ export default Header
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-width: 5em;
+  min-width: 6em;
   padding-right: 2em;
   cursor: pointer;
   color: #d3d3d3;

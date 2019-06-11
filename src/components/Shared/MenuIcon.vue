@@ -9,6 +9,7 @@
 <script>
 export const MenuIcon = {
   name: 'MenuIcon',
+
   data() {
     return {
       hover: false,
