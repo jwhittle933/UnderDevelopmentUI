@@ -7,14 +7,14 @@
       }"
     >
       <transition name="button-slide">
-      <div class="menu-button" @click="unrollMenu = !unrollMenu">
-          <span>Menu</span>
-      </div>
+        <div class="menu-button" @click="unrollMenu = !unrollMenu">
+          Menu
+        </div>
       </transition>
       <transition name="slide">
-      <div v-if="unrollMenu" class="menu-wrapper">
-        <Menu></Menu>
-      </div>
+        <div v-if="unrollMenu" class="menu-wrapper">
+          <Menu></Menu>
+        </div>
       </transition>
     </div>
     <TopPosts></TopPosts>
@@ -29,7 +29,7 @@ export const Landing = {
   name: 'LandingView',
   components: {
     TopPosts,
-    Menu
+    Menu,
   },
   data() {
     return {
@@ -47,63 +47,60 @@ export default Landing
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
+  position: relative;
   min-height: 40em;
   margin: 0;
   background-position: top center;
   background-size: cover;
 }
 
-.bg-image {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-}
-
 .menu-button {
-    display: flex; 
-    justify-content: center; 
-    flex-direction: column; 
-    border-radius: 50%;
-    height: 100px;
-    width: 100px; 
-    background-color: #EEE; 
-    font-size: 1.25em; 
-    margin-bottom: 5em;
-    margin-right: 3em; 
-    cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 5%;
+  left: 3%;
+  border-radius: 50%;
+  height: 4em;
+  width: 4em;
+  background-color: #eee;
+  font-size: 0.75em;
+  cursor: pointer;
 }
 
 .menu-wrapper {
-  display: flex; 
+  display: flex;
   height: 300px;
-  margin-bottom: 10em; 
-  margin-right: 0; 
+  margin-bottom: 10em;
+  margin-right: 0;
 }
 
 /* Transitions */
 
-.slide-enter-active, .slide-leave-active {
-  transition: .5s;
+.slide-enter-active,
+.slide-leave-active {
+  transition: 0.5s;
 }
 
 .slide-enter {
-  transform: translate(100%, 0); 
-}
-
- .slide-leave-to {
   transform: translate(100%, 0);
 }
 
-.button-slide-enter-active, .button-slide-leave-active {
-  transition: .5s ease;
+.slide-leave-to {
+  transform: translate(100%, 0);
+}
+
+.button-slide-enter-active,
+.button-slide-leave-active {
+  transition: 0.5s ease;
 }
 
 .button-slide-enter {
-  margin-right: 5em; 
+  margin-right: 5em;
 }
 
 .button-slide-leave-to {
-  margin-right: 1em; 
+  margin-right: 1em;
 }
-
 </style>
