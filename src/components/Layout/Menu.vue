@@ -114,9 +114,9 @@ export default Menu
   padding: 0;
   margin: 0;
   position: absolute;
-  left: 6.5em;
+  left: 6.7em;
   top: 0;
-  height: 100px;
+  height: auto;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   color: inherit;
   text-decoration: none;
