@@ -6,11 +6,9 @@
         'background-image': 'url(' + image + ')',
       }"
     >
-      <transition name="button-slide">
         <div class="menu-button" @click="unrollMenu = !unrollMenu">
           Menu
         </div>
-      </transition>
       <transition name="slide">
         <div v-if="unrollMenu" class="menu-wrapper">
           <Menu></Menu>
@@ -84,11 +82,11 @@ export default Landing
 }
 
 .slide-enter {
-  transform: translate(100%, 0);
+  transform: translate(0, 100%);
 }
 
 .slide-leave-to {
-  transform: translate(100%, 0);
+  transform: translate(0, 100%);
 }
 
 .button-slide-enter-active,
