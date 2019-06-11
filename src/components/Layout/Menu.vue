@@ -1,40 +1,45 @@
 <template>
   <div class="menu-wrapper-outer">
-        <div class="menu-wrapper-inner">
-            <div
-            class="menu-links"
-            @mouseover="infoHover = false"
-            @mouseleave="infoHover = false"
-            >
-            <div class="main-link" @click="goInfo">Info</div>
-            <ul v-if="infoHover" class="dropdown-menu">
-                <li
-                class="dropdown-link"
-                v-for="link in infoLinks"
-                :key="link"
-                >{{ link.text }}</li>
-            </ul>
-            </div>
-
-            <div
-            class="menu-links"
-            @mouseover="postHover = false"
-            @mouseleave="postHover = false"
-            >
-            <div class="main-link" @click="goPosts">Posts</div>
-            <ul v-if="postHover" class="dropdown-menu">
-                <li
-                class="dropdown-link"
-                v-for="link in postLinks"
-                :key="link"
-                >{{ link.text }}</li
-                >
-            </ul>
-            </div>
-            <div class="menu-links">
-            <div class="main-link" @click="goContact">Contact Us</div>
-            </div>
+    <div class="menu-wrapper-inner">
+        <transition name="slide">
+        <div
+        class="menu-links"
+        @mouseover="infoHover = false"
+        @mouseleave="infoHover = false"
+        >
+        <div class="main-link" @click="goInfo">Info</div>
+        <ul v-if="infoHover" class="dropdown-menu">
+            <li
+            class="dropdown-link"
+            v-for="link in infoLinks"
+            :key="link"
+            >{{ link.text }}</li>
+        </ul>
         </div>
+        </transition>
+        <transition name="slide">
+        <div
+        class="menu-links"
+        @mouseover="postHover = false"
+        @mouseleave="postHover = false"
+        >
+        <div class="main-link" @click="goPosts">Posts</div>
+        <ul v-if="postHover" class="dropdown-menu">
+            <li
+            class="dropdown-link"
+            v-for="link in postLinks"
+            :key="link"
+            >{{ link.text }}</li
+            >
+        </ul>
+        </div>
+        </transition>
+        <transition name="slide">
+        <div class="menu-links">
+        <div class="main-link" @click="goContact">Contact Us</div>
+        </div>
+        </transition>
+      </div>
   </div>
 </template>
 
@@ -115,7 +120,7 @@ export default Menu
     flex-direction: column; 
     justify-content: space-between;
     background-color: rgba(0,0,0,0);
-    margin-left: 2em;  
+    margin-left: 1em;  
 }
 
 .menu-links {

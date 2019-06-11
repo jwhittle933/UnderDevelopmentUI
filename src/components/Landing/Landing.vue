@@ -9,11 +9,9 @@
         <div class="menu-button" @click="unrollMenu = !unrollMenu">
           Menu
         </div>
-      <transition name="slide">
         <div v-if="unrollMenu" class="menu-wrapper">
           <Menu></Menu>
         </div>
-      </transition>
     </div>
     <TopPosts></TopPosts>
   </div>
@@ -88,5 +86,4 @@ export default Landing
 .slide-leave-to {
   transform: translate(0, 100%);
 }
-
 </style>
