@@ -31,6 +31,7 @@ export default InfoIcon
   width: 30px;
   height: 30px;
   cursor: pointer;
+  fill: white;
 }
 </style>
 
