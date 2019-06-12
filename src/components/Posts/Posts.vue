@@ -7,9 +7,18 @@
       }"
     >
       <span class="head-text">All Posts</span>
-      <div class="post-create">C</div>
-      <PostsMenu></PostsMenu>
+      <div class="post-create">
+        <CreateIcon
+          :iconWidth="'24px'"
+          :strokeWidth="'0'"
+          :color="'#000'"
+        ></CreateIcon>
+      </div>
     </div>
+    <PostsMenu
+      :showPostMenu="showPostMenu"
+      v-on:update:show-posts-menu="showPostMenu = !showPostMenu"
+    ></PostsMenu>
     <div class="posts-wrapper">
       <!-- <div class="post-tiles" v-for="post in posts" :key="post.id"> -->
       <!--   {{ post }} -->
@@ -21,15 +30,18 @@
 <script>
 import { getAllPosts } from '@/Utils/requests/mock'
 import { PostsMenu } from './PostsMenu'
+import { CreateIcon } from '../Shared'
 
 export const Posts = {
   name: 'PostsView',
   components: {
     PostsMenu,
+    CreateIcon,
   },
   data() {
     return {
       posts: [],
+      showPostMenu: false,
       image: require('@/assets/all_posts.jpg'),
     }
   },
@@ -49,6 +61,7 @@ export default Posts
   height: 30em;
   background-position: center center;
   background-size: cover;
+  z-index: 2;
 }
 
 .head-text {
@@ -68,5 +81,6 @@ export default Posts
   height: 3em;
   border-radius: 50%;
   background-color: #eee;
+  cursor: pointer;
 }
 </style>

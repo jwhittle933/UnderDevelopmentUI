@@ -34,7 +34,7 @@ export const Menu = {
       this.$router.push('/posts')
     },
     goContact: function() {
-      this.$router.push('/contact-us')
+      this.$router.push('/contact')
     },
   },
 }
