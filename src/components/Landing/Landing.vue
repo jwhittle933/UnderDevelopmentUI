@@ -63,11 +63,12 @@ export default Landing
   background-color: #eee;
   font-size: 0.75em;
   cursor: pointer;
+  outline: none;
 }
 
 .menu-wrapper {
   display: flex;
-  height: 150px;
+  height: 10em;
   margin-bottom: 5em;
   margin-right: 0;
 }
@@ -76,7 +77,7 @@ export default Landing
 
 .slide-enter-active,
 .slide-leave-active {
-  transition: 0.7s;
+  transition: 0.3s;
 }
 
 .slide-enter {

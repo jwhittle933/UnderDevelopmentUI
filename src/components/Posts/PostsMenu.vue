@@ -1,8 +1,13 @@
 <template>
   <div class="post-menu">
-    <div class="post-select">
-      <select>
-        <option v-for="option in selectOptions" :key="option.valuef">
+    <div class="post-select-wrapper">
+      <select v-model="selected" class="post-menu-select">
+        <option disabled value="">Select a Topic</option>
+        <option
+          v-for="option in selectOptions"
+          :key="option.value"
+          :value="option.value"
+        >
           {{ option.label }}
         </option>
       </select>
@@ -17,10 +22,6 @@ export const PostsMenu = {
   data() {
     return {
       selectOptions: [
-        {
-          label: 'Select a Topic',
-          value: 'default',
-        },
         {
           label: 'Christian Living',
           value: 'cl',
@@ -56,7 +57,23 @@ export default PostsMenu
   background-color: rgba(120, 120, 120, 0.5);
 }
 
-.post-select {
+.post-menu-select {
+  width: 15em;
+  font-size: 1.1em;
+  font-family: inherit;
+  border: 1px solid transparent;
+  outline: none;
+  padding-left: 0.5em;
+  appearance: none;
+  cursor: pointer;
+  transition: border 0.1s ease-in;
+}
+
+.post-menu-select:hover {
+  border: 1px solid blue;
+}
+
+.post-select-wrapper {
   margin-left: 2em;
 }
 
