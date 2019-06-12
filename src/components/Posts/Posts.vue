@@ -7,7 +7,13 @@
       }"
     >
       <span class="head-text">All Posts</span>
-      <div class="post-create">C</div>
+      <div class="post-create">
+        <CreateIcon
+          :iconWidth="'24px'"
+          :strokeWidth="'0'"
+          :color="'#000'"
+        ></CreateIcon>
+      </div>
     </div>
     <PostsMenu
       :showPostMenu="showPostMenu"
@@ -24,11 +30,13 @@
 <script>
 import { getAllPosts } from '@/Utils/requests/mock'
 import { PostsMenu } from './PostsMenu'
+import { CreateIcon } from '../Shared'
 
 export const Posts = {
   name: 'PostsView',
   components: {
     PostsMenu,
+    CreateIcon,
   },
   data() {
     return {
@@ -73,5 +81,6 @@ export default Posts
   height: 3em;
   border-radius: 50%;
   background-color: #eee;
+  cursor: pointer;
 }
 </style>

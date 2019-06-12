@@ -12,16 +12,31 @@
         </option>
       </select>
     </div>
-    <div class="post-search">Search</div>
+    <div class="post-search">
+      <SearchIcon
+        :iconWidth="'2.1em'"
+        :color="searching ? '#00FF00' : 'white'"
+        :strokeWidth="'0'"
+      ></SearchIcon>
+      <input v-model="searched" class="post-search-input" />
+    </div>
     <div class="post-menu-trigger" @click="showMenu">
-      {{ showPostMenu ? 'Close' : 'Open' }}
+      <SearchIcon
+        :iconWidth="'24px'"
+        :color="'white'"
+        :strokeWidth="'0'"
+      ></SearchIcon>
     </div>
   </div>
 </template>
 
 <script>
+import { SearchIcon } from '../Shared'
 export const PostsMenu = {
   name: 'PostsMenu',
+  components: {
+    SearchIcon,
+  },
   props: {
     showPostMenu: Boolean,
   },
@@ -50,6 +65,12 @@ export const PostsMenu = {
       this.$emit('update:show-posts-menu')
     },
   },
+  computed: {
+    searching: function() {
+      if (this.searched !== '') return true
+      return false
+    },
+  },
 }
 
 export default PostsMenu
@@ -62,8 +83,8 @@ export default PostsMenu
   align-items: center;
   position: relative;
   width: 100%;
-  height: 5em;
-  background-color: rgba(120, 120, 120, 0.8);
+  height: 3em;
+  background-color: rgba(0, 0, 0, 0.7);
   transition: transform 0.3s ease-in;
 }
 
@@ -92,18 +113,33 @@ export default PostsMenu
 }
 
 .post-search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-right: 2em;
 }
 
+.post-search-input {
+  outline: none;
+  font-family: inherit;
+  font-size: 1em;
+  border-radius: 4px;
+  border: none;
+  padding: 0.2em;
+}
+
 .post-menu-trigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: absolute;
-  left: 3em;
+  left: 48%;
   bottom: -1.5em;
   height: 1.5em;
-  width: 7em;
   background-color: inherit;
   border-radius: 0 0 5px 5px;
   cursor: pointer;
   color: white;
+  padding: 0 1em;
 }
 </style>
