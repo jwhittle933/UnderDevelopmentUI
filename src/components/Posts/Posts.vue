@@ -9,7 +9,10 @@
       <span class="head-text">All Posts</span>
       <div class="post-create">C</div>
     </div>
-    <PostsMenu :showPostMenu="showPostMenu"></PostsMenu>
+    <PostsMenu
+      :showPostMenu="showPostMenu"
+      v-on:update:show-posts-menu="showPostMenu = !showPostMenu"
+    ></PostsMenu>
     <div class="posts-wrapper">
       <!-- <div class="post-tiles" v-for="post in posts" :key="post.id"> -->
       <!--   {{ post }} -->
@@ -30,7 +33,7 @@ export const Posts = {
   data() {
     return {
       posts: [],
-      showPostMenu: true,
+      showPostMenu: false,
       image: require('@/assets/all_posts.jpg'),
     }
   },

@@ -13,7 +13,9 @@
       </select>
     </div>
     <div class="post-search">Search</div>
-    <div class="post-menu-trigger">Open</div>
+    <div class="post-menu-trigger" @click="showMenu">
+      {{ showPostMenu ? 'Close' : 'Open' }}
+    </div>
   </div>
 </template>
 
@@ -43,6 +45,11 @@ export const PostsMenu = {
       searched: '',
     }
   },
+  methods: {
+    showMenu: function() {
+      this.$emit('update:show-posts-menu')
+    },
+  },
 }
 
 export default PostsMenu
@@ -57,7 +64,7 @@ export default PostsMenu
   width: 100%;
   height: 5em;
   background-color: rgba(120, 120, 120, 0.8);
-  transition: transform 0.2s ease-in;
+  transition: transform 0.3s ease-in;
 }
 
 .hide-menu {
@@ -73,7 +80,7 @@ export default PostsMenu
   padding-left: 0.5em;
   appearance: none;
   cursor: pointer;
-  transition: border 0.1s ease-in;
+  transition: border 0.1s linear;
 }
 
 .post-menu-select:hover {
@@ -96,5 +103,7 @@ export default PostsMenu
   width: 7em;
   background-color: inherit;
   border-radius: 0 0 5px 5px;
+  cursor: pointer;
+  color: white;
 }
 </style>
