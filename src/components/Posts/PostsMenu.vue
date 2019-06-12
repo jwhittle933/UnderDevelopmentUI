@@ -21,11 +21,7 @@
       <input v-model="searched" class="post-search-input" />
     </div>
     <div class="post-menu-trigger" @click="showMenu">
-      <SearchIcon
-        :iconWidth="'24px'"
-        :color="'white'"
-        :strokeWidth="'0'"
-      ></SearchIcon>
+      Advanced Search
     </div>
   </div>
 </template>
@@ -125,6 +121,7 @@ export default PostsMenu
   font-size: 1em;
   border-radius: 4px;
   border: none;
+  background-color: #eee;
   padding: 0.2em;
 }
 
@@ -133,7 +130,7 @@ export default PostsMenu
   justify-content: space-between;
   align-items: center;
   position: absolute;
-  left: 48%;
+  left: 46%;
   bottom: -1.5em;
   height: 1.5em;
   background-color: inherit;
