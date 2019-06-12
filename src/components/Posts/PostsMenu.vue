@@ -1,5 +1,5 @@
 <template>
-  <div class="post-menu">
+  <div class="post-menu" :class="{ 'hide-menu': !showPostMenu }">
     <div class="post-select-wrapper">
       <select v-model="selected" class="post-menu-select">
         <option disabled value="">Select a Topic</option>
@@ -13,12 +13,16 @@
       </select>
     </div>
     <div class="post-search">Search</div>
+    <div class="post-menu-trigger">Open</div>
   </div>
 </template>
 
 <script>
 export const PostsMenu = {
   name: 'PostsMenu',
+  props: {
+    showPostMenu: Boolean,
+  },
   data() {
     return {
       selectOptions: [
@@ -49,12 +53,15 @@ export default PostsMenu
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: absolute;
-  bottom: 1em;
-  left: 0;
+  position: relative;
   width: 100%;
   height: 5em;
-  background-color: rgba(120, 120, 120, 0.5);
+  background-color: rgba(120, 120, 120, 0.8);
+  transition: transform 0.2s ease-in;
+}
+
+.hide-menu {
+  transform: translateY(-100%);
 }
 
 .post-menu-select {
@@ -79,5 +86,15 @@ export default PostsMenu
 
 .post-search {
   margin-right: 2em;
+}
+
+.post-menu-trigger {
+  position: absolute;
+  left: 3em;
+  bottom: -1.5em;
+  height: 1.5em;
+  width: 7em;
+  background-color: inherit;
+  border-radius: 0 0 5px 5px;
 }
 </style>

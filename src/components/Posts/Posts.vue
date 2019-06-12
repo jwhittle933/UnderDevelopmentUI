@@ -8,8 +8,8 @@
     >
       <span class="head-text">All Posts</span>
       <div class="post-create">C</div>
-      <PostsMenu></PostsMenu>
     </div>
+    <PostsMenu :showPostMenu="showPostMenu"></PostsMenu>
     <div class="posts-wrapper">
       <!-- <div class="post-tiles" v-for="post in posts" :key="post.id"> -->
       <!--   {{ post }} -->
@@ -30,6 +30,7 @@ export const Posts = {
   data() {
     return {
       posts: [],
+      showPostMenu: true,
       image: require('@/assets/all_posts.jpg'),
     }
   },
@@ -49,6 +50,7 @@ export default Posts
   height: 30em;
   background-position: center center;
   background-size: cover;
+  z-index: 2;
 }
 
 .head-text {
