@@ -130,7 +130,7 @@ export default PostsMenu
   justify-content: space-between;
   align-items: center;
   position: absolute;
-  left: 46%;
+  left: 45%;
   bottom: -1.5em;
   height: 1.5em;
   background-color: inherit;

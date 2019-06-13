@@ -20,9 +20,7 @@
       v-on:update:show-posts-menu="showPostMenu = !showPostMenu"
     ></PostsMenu>
     <div class="posts-wrapper">
-      <!-- <div class="post-tiles" v-for="post in posts" :key="post.id"> -->
-      <!--   {{ post }} -->
-      <!-- </div> -->
+      <PostTile v-for="(post, i) in posts" :post="post" :key="i"></PostTile>
     </div>
   </div>
 </template>
@@ -31,12 +29,14 @@
 import { getAllPosts } from '@/Utils/requests/mock'
 import { PostsMenu } from './PostsMenu'
 import { CreateIcon } from '../Shared'
+import { PostTile } from './PostTile'
 
 export const Posts = {
   name: 'PostsView',
   components: {
     PostsMenu,
     CreateIcon,
+    PostTile,
   },
   data() {
     return {
@@ -82,5 +82,15 @@ export default Posts
   border-radius: 50%;
   background-color: #eee;
   cursor: pointer;
+}
+
+.posts-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0.5em 1em;
+  place-items: center;
+  place-content: center;
+  width: 90%;
+  margin: 3em auto;
 }
 </style>
