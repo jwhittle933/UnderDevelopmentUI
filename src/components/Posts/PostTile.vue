@@ -1,7 +1,7 @@
 <template>
-  <div class="post">
+  <div class="post" @click="goToPost">
     <img src="https://picsum.photos/700/275" />
-    <div class-="tile-title">{{ post.title }}</div>
+    <div class="tile-title">{{ post.title }}</div>
   </div>
 </template>
 
@@ -9,6 +9,11 @@
 export const PostTile = {
   name: 'PostTile',
   props: ['post'],
+  methods: {
+    goToPost: function() {
+      this.$router.push(`/post/${this.post.id}`)
+    },
+  },
 }
 
 export default PostTile
@@ -32,5 +37,7 @@ export default PostTile
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 1.3em;
+  height: 1.5em;
 }
 </style>
