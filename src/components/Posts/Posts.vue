@@ -19,7 +19,12 @@
       :showPostMenu="showPostMenu"
       v-on:update:show-posts-menu="showPostMenu = !showPostMenu"
     ></PostsMenu>
-    <div class="posts-wrapper">
+    <div class="select-display-wrapper">
+      <SelectPostsDisplay
+        v-on:update:displayType="displayType = $event"
+      ></SelectPostsDisplay>
+    </div>
+    <div class="posts-tile-wrapper" v-if="displayType === 'tile'">
       <PostTile v-for="(post, i) in posts" :post="post" :key="i"></PostTile>
     </div>
   </div>
@@ -30,6 +35,7 @@ import { getAllPosts } from '@/Utils/requests/mock'
 import { PostsMenu } from './PostsMenu'
 import { CreateIcon } from '../Shared'
 import { PostTile } from './PostTile'
+import { SelectPostsDisplay } from './SelectPostsDisplay'
 
 export const Posts = {
   name: 'PostsView',
@@ -37,13 +43,20 @@ export const Posts = {
     PostsMenu,
     CreateIcon,
     PostTile,
+    SelectPostsDisplay,
   },
   data() {
     return {
       posts: [],
       showPostMenu: false,
       image: require('@/assets/all_posts.jpg'),
+      displayType: 'tile',
     }
+  },
+  methods: {
+    setDisplay: function(event) {
+      this.displayType = event
+    },
   },
   mounted() {
     getAllPosts().then(posts => (this.posts = posts))
@@ -84,13 +97,21 @@ export default Posts
   cursor: pointer;
 }
 
-.posts-wrapper {
+.select-display-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 90%;
+  margin: 1em auto;
+}
+
+.posts-tile-wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 0.5em 1em;
   place-items: center;
   place-content: center;
   width: 90%;
-  margin: 3em auto;
+  margin: 2em auto;
 }
 </style>
