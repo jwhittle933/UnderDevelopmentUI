@@ -1,5 +1,5 @@
 <template>
-  <div class="post" @click="goToPost">
+  <div :class="classType" @click="goToPost">
     <img src="https://picsum.photos/700/275" />
     <div class="tile-title">{{ post.title }}</div>
   </div>
@@ -8,10 +8,17 @@
 <script>
 export const PostTile = {
   name: 'PostTile',
-  props: ['post'],
+  props: ['post', 'displayType'],
   methods: {
     goToPost: function() {
       this.$router.push(`/post/${this.post.id}`)
+    },
+  },
+  computed: {
+    classType: function() {
+      if (this.displayType === 'tile') return 'tile'
+      if (this.displayType === 'list') return 'list'
+      if (this.displayType === 'tile-list') return 'tile-list'
     },
   },
 }
@@ -20,7 +27,7 @@ export default PostTile
 </script>
 
 <style scoped>
-.post {
+.tile {
   width: 100%;
   height: 20em;
   border: 2px solid transparent;
@@ -29,8 +36,14 @@ export default PostTile
   overflow: hidden;
 }
 
-.post:hover {
+.tile:hover {
   border: 1px solid blue;
+}
+
+.list {
+}
+
+.tile-list {
 }
 
 .tile-title {

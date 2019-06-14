@@ -56,7 +56,7 @@ export default SelectPostsDisplay
   display: flex;
   justify-content: space-between;
   align-itemm: center;
-  width: 12%;
+  width: 11%;
   min-width: 6em;
   background-color: rgba(170, 170, 170, 0.6);
   border-radius: 4px;

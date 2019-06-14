@@ -24,8 +24,13 @@
         v-on:update:displayType="displayType = $event"
       ></SelectPostsDisplay>
     </div>
-    <div class="posts-tile-wrapper" v-if="displayType === 'tile'">
-      <PostTile v-for="(post, i) in posts" :post="post" :key="i"></PostTile>
+    <div :class="classType">
+      <PostTile
+        v-for="(post, i) in posts"
+        :post="post"
+        :displayType="displayType"
+        :key="i"
+      ></PostTile>
     </div>
   </div>
 </template>
@@ -52,6 +57,13 @@ export const Posts = {
       image: require('@/assets/all_posts.jpg'),
       displayType: 'tile',
     }
+  },
+  computed: {
+    classType: function() {
+      if (this.displayType === 'tile') return 'posts-tile-wrapper'
+      if (this.displayType === 'list') return 'posts-list-wrapper'
+      if (this.displayType === 'tile-list') return 'posts-tile-list-wrapper'
+    },
   },
   methods: {
     setDisplay: function(event) {
@@ -113,5 +125,11 @@ export default Posts
   place-content: center;
   width: 90%;
   margin: 2em auto;
+}
+
+.posts-list-wrapper {
+}
+
+.posts-tile-list-wrapper {
 }
 </style>
