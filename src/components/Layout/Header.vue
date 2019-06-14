@@ -1,12 +1,10 @@
 <template>
   <div id="header" class="header" v-scroll="scroll">
-    <div class="logo" @click="goHome">
-      {{ headerText }}
-    </div>
+    <div class="logo" @click="goHome">{{ headerText }}</div>
 
     <div class="user">
       Login
-      <UserIcon></UserIcon>
+      <UserIcon :color="color"></UserIcon>
     </div>
   </div>
 </template>
@@ -22,6 +20,7 @@ export const Header = {
   data() {
     return {
       headerText: '_D | under development',
+      color: 'black',
     }
   },
   methods: {
