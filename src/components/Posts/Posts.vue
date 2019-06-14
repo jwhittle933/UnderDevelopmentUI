@@ -131,5 +131,11 @@ export default Posts
 }
 
 .posts-tile-list-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  place-items: center;
+  place-content: center;
+  width: 90%;
+  margin: 2em auto;
 }
 </style>
