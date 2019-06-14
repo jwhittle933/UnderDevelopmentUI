@@ -18,7 +18,11 @@
         :color="searching ? '#00FF00' : 'white'"
         :strokeWidth="'0'"
       ></SearchIcon>
-      <input v-model="searched" class="post-search-input" />
+      <input
+        v-model="searched"
+        class="post-search-input"
+        @keydown.enter="submit"
+      />
     </div>
     <div class="post-menu-trigger" @click="showMenu">
       Advanced Search
@@ -60,6 +64,7 @@ export const PostsMenu = {
     showMenu: function() {
       this.$emit('update:show-posts-menu')
     },
+    submit: function() {},
   },
   computed: {
     searching: function() {
@@ -130,7 +135,7 @@ export default PostsMenu
   justify-content: space-between;
   align-items: center;
   position: absolute;
-  left: 46%;
+  left: 45%;
   bottom: -1.5em;
   height: 1.5em;
   background-color: inherit;
