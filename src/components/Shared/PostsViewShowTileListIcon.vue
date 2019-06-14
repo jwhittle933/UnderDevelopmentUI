@@ -3,6 +3,7 @@
     viewBox="0 0 24 24"
     class="icon"
     :style="{ stroke: color, 'stroke-width': strokeWidth, width: iconWidth }"
+    @click="$emit('icon-clicked')"
   >
     <path
       :style="{ fill: color }"

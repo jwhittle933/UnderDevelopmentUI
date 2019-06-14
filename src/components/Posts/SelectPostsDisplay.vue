@@ -4,19 +4,19 @@
       :iconWidth="iconWidth"
       :strokeWidth="'0'"
       :color="'black'"
-      @click="$emit('update:displayType', 'tile')"
+      @icon-clicked="setDisplay('tile')"
     ></PostsViewShowTilesIcon>
     <PostsViewShowListIcon
       :iconWidth="iconWidth"
       :strokeWidth="'0'"
       :color="'black'"
-      @click="$emit('update:displayType', 'list')"
+      @icon-clicked="setDisplay('list')"
     ></PostsViewShowListIcon>
     <PostsViewShowTileListIcon
       :iconWidth="iconWidth"
       :strokeWidth="'0'"
       :color="'black'"
-      @click="$emit('update:displayType', 'tile-list')"
+      @icon-clicked="setDisplay('tile-list')"
     ></PostsViewShowTileListIcon>
   </div>
 </template>
@@ -41,6 +41,11 @@ export const SelectPostsDisplay = {
       iconWidth: '30%',
     }
   },
+  methods: {
+    setDisplay: function(display) {
+      this.$emit('update:displayType', display)
+    },
+  },
 }
 
 export default SelectPostsDisplay
@@ -51,8 +56,9 @@ export default SelectPostsDisplay
   display: flex;
   justify-content: space-between;
   align-itemm: center;
-  width: 9em;
-  /* background-color: rgba(120, 120, 120, 0.6); */
+  width: 12%;
+  min-width: 6em;
+  background-color: rgba(170, 170, 170, 0.6);
   border-radius: 4px;
 }
 </style>
