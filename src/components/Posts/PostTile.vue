@@ -2,7 +2,8 @@
   <div :class="classType" @click="goToPost">
     <img src="https://picsum.photos/700/275" v-if="displayType !== 'list'" />
     <div class="title">{{ post.title }}</div>
-    <div v-if="displayType === 'list'">{{ author.name }}</div>
+    <div class="name">{{ author.name }}</div>
+    <div class="comments">{{ post.comments.length }} comments</div>
     <div class="date">{{ formatDate(post.inserted_at) }}</div>
   </div>
 </template>
@@ -67,8 +68,13 @@ export default PostTile
   transition: border 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.list > title {
+.list > .title {
   font-size: 1em;
+}
+
+.list > .name {
+  min-width: 8em;
+  text-align: left;
 }
 
 .list:hover {
