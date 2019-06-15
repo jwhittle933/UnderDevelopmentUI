@@ -124,10 +124,12 @@ export default Posts
   place-items: center;
   place-content: center;
   width: 90%;
+  min-height: 60em;
   margin: 2em auto;
 }
 
 .posts-list-wrapper {
+  min-height: 60em;
 }
 
 .posts-tile-list-wrapper {

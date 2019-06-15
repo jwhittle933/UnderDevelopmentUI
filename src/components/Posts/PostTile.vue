@@ -1,17 +1,23 @@
 <template>
   <div :class="classType" @click="goToPost">
-    <img
-      src="https://picsum.photos/700/275"
-      v-if="displayType === 'tile' || displayType === 'tile-list'"
-    />
-    <div class="tile-title">{{ post.title }}</div>
+    <img src="https://picsum.photos/700/275" v-if="displayType !== 'list'" />
+    <div class="title">{{ post.title }}</div>
+    <div v-if="displayType === 'list'">{{ author.name }}</div>
+    <div class="date">{{ formatDate(post.inserted_at) }}</div>
   </div>
 </template>
 
 <script>
+import { getAuthor } from '@/Utils/requests/mock'
+
 export const PostTile = {
   name: 'PostTile',
   props: ['post', 'displayType'],
+  data() {
+    return {
+      author: '',
+    }
+  },
   methods: {
     goToPost: function() {
       this.$router.push(`/post/${this.post.id}`)
@@ -23,6 +29,9 @@ export const PostTile = {
       if (this.displayType === 'list') return 'list'
       if (this.displayType === 'tile-list') return 'tile-list'
     },
+  },
+  mounted() {
+    getAuthor(this.post.user_id).then(au => (this.author = au))
   },
 }
 
@@ -44,6 +53,26 @@ export default PostTile
 }
 
 .list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #d3d3d3;
+  border-left: 3px solid #d3d3d3;
+  width: 88%;
+  height: 2em;
+  margin: 0 auto;
+  padding-left: 1em;
+  padding-right: 1em;
+  cursor: pointer;
+  transition: border 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.list > title {
+  font-size: 1em;
+}
+
+.list:hover {
+  border-left: 3px solid blue;
 }
 
 .tile-list {
@@ -55,7 +84,9 @@ export default PostTile
   overflow: hidden;
   margin: 0.5em 0;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition-property: transform, box-shadow;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .tile-list:hover {
@@ -69,7 +100,7 @@ export default PostTile
   margin-right: 1em;
 }
 
-.tile-list > .tile-title {
+.tile-list > .title {
   font-size: 1.5em;
   color: white;
   position: absolute;
