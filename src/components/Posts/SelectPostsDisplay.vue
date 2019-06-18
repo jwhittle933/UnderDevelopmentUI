@@ -43,11 +43,11 @@ export const SelectPostsDisplay = {
     }
   },
   methods: {
+    ...mapMutations(['setPostsDisplay']),
     setDisplay: function(display) {
       // this.$emit('update:displayType', display)
       this.setPostsDisplay(display)
     },
-    ...mapMutations(['setPostsDisplay']),
   },
 }
 
