@@ -86,7 +86,7 @@ export default PostsMenu
   width: 100%;
   height: 3em;
   background-color: rgba(0, 0, 0, 0.7);
-  transition: transform 0.3s ease-in;
+  transition: transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .hide-menu {
