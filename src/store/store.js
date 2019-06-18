@@ -12,6 +12,7 @@ export const store = new Vuex.Store({
         userId: '',
       },
     },
+    listStyle: 'tile',
   },
   mutations: {
     loginUser: ({ user }, { username, password }) => {
@@ -20,13 +21,23 @@ export const store = new Vuex.Store({
     logoutUser: ({ user }) => {
       return user
     },
+    setPostsDisplay(state, userSelection) {
+      state.listStyle = userSelection
+    },
   },
   actions: {
-    loginUser: context => context.commit('loginUser'),
-    logoutUser: context => context.commit('logoutUser'),
+    loginUser: ({ commit }) =>
+      commit('loginUser', {
+        username: 'testUser',
+        password: 'testPass',
+      }),
+    logoutUser: ({ commit }) => commit('logoutUser'),
+    setPostsDisplay: ({ commit }, userSelection) =>
+      commit('setPostsDisplay', userSelection),
   },
   getters: {
     idLoggedIn: ({ user }) => user.isLoggedIn,
     getUser: ({ user }) => user.userCredientials,
+    getListStyle: ({ listStyle }) => listStyle,
   },
 })

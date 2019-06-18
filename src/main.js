@@ -4,6 +4,7 @@ import router from './router'
 import { store } from './store'
 
 Vue.config.productionTip = false
+Vue.config.devtools = true
 
 Vue.directive('scroll', function(el, binding) {
   const f = function(evt) {
