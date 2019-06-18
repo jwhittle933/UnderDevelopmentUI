@@ -20,7 +20,7 @@ export const Header = {
   data() {
     return {
       headerText: '_D | under development',
-      color: 'white',
+      color: 'gray',
     }
   },
   methods: {
