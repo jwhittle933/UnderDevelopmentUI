@@ -38,7 +38,7 @@ const actions = {
 }
 
 const getters = {
-  idLoggedIn: ({ user }) => user.isLoggedIn,
+  isLoggedIn: ({ user }) => user.isLoggedIn,
   getUser: ({ user }) => user.userCredientials,
   getListStyle: ({ listStyle }) => listStyle,
 }
