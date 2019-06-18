@@ -15,26 +15,26 @@ const state = {
 }
 
 const mutations = {
-  loginUser: ({ user }, { username, password }) => {
+  LOGIN_USER: ({ user }, { username, password }) => {
     return { user, username, password }
   },
-  logoutuser: ({ user }) => {
+  LOGOUT_USER: ({ user }) => {
     return user
   },
-  setPostsDisplay(state, userSelection) {
+  SET_POSTS_DISPLAY: (state, userSelection) => {
     state.listStyle = userSelection
   },
 }
 
 const actions = {
   loginUser: ({ commit }) =>
-    commit('loginUser', {
+    commit('LOGIN_USER', {
       username: 'testUser',
       password: 'testPass',
     }),
-  logoutUser: ({ commit }) => commit('logoutUser'),
+  logoutUser: ({ commit }) => commit('LOGOUT_USER'),
   setPostsDisplay: ({ commit }, userSelection) =>
-    commit('setPostsDisplay', userSelection),
+    commit('SET_POSTS_DISPLAY', userSelection),
 }
 
 const getters = {
