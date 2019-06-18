@@ -36,6 +36,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import { getAllPosts } from '@/Utils/requests/mock'
 import { PostsMenu } from './PostsMenu'
 import { CreateIcon } from '../Shared'
@@ -55,7 +56,7 @@ export const Posts = {
       posts: [],
       showPostMenu: false,
       image: require('@/assets/all_posts.jpg'),
-      displayType: 'tile',
+      displayType: this.getListStyle(),
     }
   },
   computed: {
@@ -69,6 +70,7 @@ export const Posts = {
     setDisplay: function(event) {
       this.displayType = event
     },
+    ...mapGetters(['getListStyle']),
   },
   mounted() {
     getAllPosts().then(posts => (this.posts = posts))

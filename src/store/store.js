@@ -18,7 +18,7 @@ export const store = new Vuex.Store({
     loginUser: ({ user }, { username, password }) => {
       return { user, username, password }
     },
-    logoutUser: ({ user }) => {
+    logoutuser: ({ user }) => {
       return user
     },
     setPostsDisplay(state, userSelection) {

@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapMutations } from 'vuex'
 import {
   PostsViewShowTilesIcon,
   PostsViewShowListIcon,
@@ -44,10 +44,10 @@ export const SelectPostsDisplay = {
   },
   methods: {
     setDisplay: function(display) {
-      this.$emit('update:displayType', display)
+      // this.$emit('update:displayType', display)
       this.setPostsDisplay(display)
     },
-    ...mapActions(['setPostsDisplay']),
+    ...mapMutations(['setPostsDisplay']),
   },
 }
 
