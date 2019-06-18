@@ -55,7 +55,6 @@ export const Posts = {
       posts: [],
       showPostMenu: false,
       image: require('@/assets/all_posts.jpg'),
-      displayType: 'tile',
     }
   },
   computed: {
@@ -64,10 +63,8 @@ export const Posts = {
       if (this.displayType === 'list') return 'posts-list-wrapper'
       if (this.displayType === 'tile-list') return 'posts-tile-list-wrapper'
     },
-  },
-  methods: {
-    setDisplay: function(event) {
-      this.displayType = event
+    displayType: function() {
+      return this.$store.getters.getListStyle
     },
   },
   mounted() {
@@ -124,10 +121,12 @@ export default Posts
   place-items: center;
   place-content: center;
   width: 90%;
+  min-height: 60em;
   margin: 2em auto;
 }
 
 .posts-list-wrapper {
+  min-height: 60em;
 }
 
 .posts-tile-list-wrapper {
