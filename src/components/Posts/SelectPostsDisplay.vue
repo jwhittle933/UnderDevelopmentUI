@@ -43,8 +43,8 @@ export const SelectPostsDisplay = {
   data() {
     return {
       iconWidth: '30%',
-      activeColor: '#0D00C4',
-      inactiveColor: '#435964',
+      activeColor: '#0597F2',
+      inactiveColor: '#3B4859',
     }
   },
   methods: {

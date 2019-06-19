@@ -127,6 +127,7 @@ export default Posts
 }
 
 .posts-list-wrapper {
+  padding: 5px;
   min-height: 60em;
 }
 
