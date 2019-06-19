@@ -2,7 +2,12 @@
   <svg
     viewBox="0 0 24 24"
     class="icon"
-    :style="{ stroke: color, 'stroke-width': strokeWidth, width: iconWidth }"
+    :style="{
+      stroke: color,
+      'stroke-width': strokeWidth,
+      width: iconWidth,
+      'box-shadow': active ? '0 8px 6px -6px #20303C' : '',
+    }"
     @click="$emit('icon-clicked')"
   >
     <path
@@ -15,7 +20,7 @@
 <script>
 export const PostsViewShowListIcon = {
   name: 'PostsViewShowTiles',
-  props: ['iconWidth', 'strokeWidth', 'color'],
+  props: ['iconWidth', 'strokeWidth', 'color', 'active'],
   data() {
     return {
       hover: false,

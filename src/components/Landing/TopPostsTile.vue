@@ -1,7 +1,8 @@
 <template>
   <div class="top-posts-tile" @click="goToPost">
     <!-- Placeholder image for now -->
-    <img src="https://picsum.photos/275/150?grayscale" />
+    <!-- Needs to be made responsive -->
+    <img src="https://picsum.photos/200/150?grayscale" />
     <span>{{ title }}</span>
   </div>
 </template>
@@ -24,11 +25,15 @@ export default TopPostsTile
 .top-posts-tile {
   overflow: hidden;
   min-height: 12em;
-  width: 16em;
+  width: calc(1em + 15vw);
   margin: 5px;
   cursor: pointer;
   background-color: #d3d3d3;
   color: black;
   border-radius: 4px;
+}
+
+.top-posts-tile > img {
+  width: calc(1em + 15vw);
 }
 </style>

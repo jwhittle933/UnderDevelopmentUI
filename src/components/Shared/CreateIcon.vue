@@ -3,6 +3,7 @@
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     :style="{ stroke: color, 'stroke-width': strokeWidth, width: iconWidth }"
+    @click="fn"
   >
     <path
       :style="{ fill: color }"
@@ -15,7 +16,7 @@
 <script>
 export const CreateIcon = {
   name: 'CreateIcon',
-  props: ['iconWidth', 'strokeWidth', 'color'],
+  props: ['iconWidth', 'strokeWidth', 'color', 'fn'],
   data() {
     return {
       hover: false,
