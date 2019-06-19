@@ -1,5 +1,6 @@
 <template>
   <div class="display-select">
+    <div class="text">Set Display</div>
     <PostsViewShowTilesIcon
       :active="active === 'tile'"
       :iconWidth="iconWidth"
@@ -62,10 +63,15 @@ export default SelectPostsDisplay
 .display-select {
   display: flex;
   justify-content: space-between;
-  align-itemm: center;
-  width: 11%;
+  align-items: center;
+  width: 18%;
   min-width: 6em;
-  /* background-color: rgba(170, 170, 170, 0.6); */
   border-radius: 4px;
+  outline: none;
+}
+
+.text {
+  min-width: calc(5em + 1vw);
+  outline: none;
 }
 </style>

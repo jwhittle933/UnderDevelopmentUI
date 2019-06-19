@@ -135,12 +135,12 @@ export default PostsMenu
 .post-menu-trigger {
   text-align: center;
   position: absolute;
-  left: 45%;
+  left: 0;
   bottom: -1.5em;
   height: 1.5em;
   min-width: 7em;
   background-color: inherit;
-  border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 0;
   cursor: pointer;
   color: white;
   padding: 0 1em;
