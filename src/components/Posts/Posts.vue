@@ -7,11 +7,12 @@
       }"
     >
       <span class="head-text">All Posts</span>
-      <div class="post-create">
+      <div class="post-create" v-if="isLoggedIn">
         <CreateIcon
           :iconWidth="'24px'"
           :strokeWidth="'0'"
           :color="'#000'"
+          :fn="$router.push('/create')"
         ></CreateIcon>
       </div>
     </div>
@@ -37,6 +38,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import { getAllPosts } from '@/Utils/requests/mock'
 import { PostsMenu } from './PostsMenu'
 import { CreateIcon } from '../Shared'
@@ -54,11 +56,12 @@ export const Posts = {
   data() {
     return {
       posts: [],
-      showPostMenu: false,
+      showPostMenu: true,
       image: require('@/assets/all_posts.jpg'),
     }
   },
   computed: {
+    ...mapGetters(['isLoggedIn']),
     classType: function() {
       if (this.displayType === 'tile') return 'posts-tile-wrapper'
       if (this.displayType === 'list') return 'posts-list-wrapper'

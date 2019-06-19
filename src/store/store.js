@@ -11,6 +11,7 @@ const state = {
       userId: '',
     },
   },
+  globalTheme: 'primary',
   listStyle: 'tile',
 }
 

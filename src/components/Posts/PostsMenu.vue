@@ -21,11 +21,12 @@
       <input
         v-model="searched"
         class="post-search-input"
+        placeholder="Search by author, title, etc..."
         @keydown.enter="submit"
       />
     </div>
     <div class="post-menu-trigger" @click="showMenu">
-      Advanced Search
+      {{ showPostMenu ? 'Hide ' : 'Show ' }}Search
     </div>
   </div>
 </template>
@@ -121,6 +122,7 @@ export default PostsMenu
 }
 
 .post-search-input {
+  width: 20em;
   outline: none;
   font-family: inherit;
   font-size: 1em;
@@ -131,13 +133,12 @@ export default PostsMenu
 }
 
 .post-menu-trigger {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  text-align: center;
   position: absolute;
   left: 45%;
   bottom: -1.5em;
   height: 1.5em;
+  min-width: 7em;
   background-color: inherit;
   border-radius: 0 0 5px 5px;
   cursor: pointer;
