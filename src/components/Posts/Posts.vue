@@ -22,6 +22,7 @@
     <div class="select-display-wrapper">
       <SelectPostsDisplay
         v-on:update:displayType="displayType = $event"
+        :active="displayType"
       ></SelectPostsDisplay>
     </div>
     <div :class="classType">

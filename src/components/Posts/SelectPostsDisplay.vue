@@ -1,23 +1,26 @@
 <template>
   <div class="display-select">
     <PostsViewShowTilesIcon
+      :active="active === 'tile'"
       :iconWidth="iconWidth"
       :strokeWidth="'0'"
-      :color="'black'"
+      :color="active === 'tile' ? activeColor : inactiveColor"
       @icon-clicked="setDisplay('tile')"
     ></PostsViewShowTilesIcon>
-    <PostsViewShowListIcon
-      :iconWidth="iconWidth"
-      :strokeWidth="'0'"
-      :color="'black'"
-      @icon-clicked="setDisplay('list')"
-    ></PostsViewShowListIcon>
     <PostsViewShowTileListIcon
+      :active="active === 'tile-list'"
       :iconWidth="iconWidth"
       :strokeWidth="'0'"
-      :color="'black'"
+      :color="active === 'tile-list' ? activeColor : inactiveColor"
       @icon-clicked="setDisplay('tile-list')"
     ></PostsViewShowTileListIcon>
+    <PostsViewShowListIcon
+      :active="active === 'list'"
+      :iconWidth="iconWidth"
+      :strokeWidth="'0'"
+      :color="active === 'list' ? activeColor : inactiveColor"
+      @icon-clicked="setDisplay('list')"
+    ></PostsViewShowListIcon>
   </div>
 </template>
 
@@ -40,6 +43,8 @@ export const SelectPostsDisplay = {
   data() {
     return {
       iconWidth: '30%',
+      activeColor: '#0D00C4',
+      inactiveColor: '#435964',
     }
   },
   methods: {
@@ -60,7 +65,7 @@ export default SelectPostsDisplay
   align-itemm: center;
   width: 11%;
   min-width: 6em;
-  background-color: rgba(170, 170, 170, 0.6);
+  /* background-color: rgba(170, 170, 170, 0.6); */
   border-radius: 4px;
 }
 </style>
