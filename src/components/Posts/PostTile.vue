@@ -17,6 +17,7 @@ export const PostTile = {
   data() {
     return {
       author: '',
+      image: require('@/assets/splash.jpg'),
     }
   },
   methods: {
@@ -41,12 +42,26 @@ export default PostTile
 
 <style scoped>
 .tile {
+  position: relative;
   width: 100%;
   height: 20em;
   border: 2px solid transparent;
   border-radius: 5px;
   cursor: pointer;
   overflow: hidden;
+}
+
+.tile > img {
+  min-width: calc(1em + 15vw);
+}
+
+.tile > .title {
+  font-size: 1.4em;
+  color: white;
+  position: absolute;
+  bottom: 14%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .tile:hover {
@@ -101,17 +116,19 @@ export default PostTile
 }
 
 .tile-list > img {
-  width: 20em;
+  width: calc(1.2em + 19vw);
   overflow: hidden;
   margin-right: 1em;
 }
 
 .tile-list > .title {
-  font-size: 1.5em;
+  width: calc(1em + 19vw);
+  font-size: calc(0.7em + 1vh);
   color: white;
   position: absolute;
-  left: 0.5em;
-  top: 30%;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .tile-title {
