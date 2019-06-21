@@ -93,6 +93,9 @@ export default Header
 }
 
 .login-wrapper {
-  margin-top: 1em;
+  position: fixed;
+  top: 5%;
+  left: 88%;
+  margin-top: 0.5em;
 }
 </style>
