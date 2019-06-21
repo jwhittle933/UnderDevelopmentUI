@@ -19,6 +19,7 @@
 export const Login = {
   name: 'Header',
 }
+export default Login
 </script>
 
 <style scoped>
