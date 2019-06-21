@@ -4,9 +4,13 @@
 
     <div class="user" @click="showLogin = !showLogin">
       Login
-      <UserIcon :color="color"></UserIcon>
+      <div class="login-form">
+        <UserIcon :color="color"></UserIcon>
+        <div class="login-wrapper">
+          <Login v-if="showLogin"></Login>
+        </div>
+      </div>
     </div>
-    <Login v-if="showLogin"></Login>
   </div>
 </template>
 
@@ -62,22 +66,33 @@ export default Header
   z-index: 1000;
   transition: background-color 0.2s ease-in;
 }
-
-.user {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-width: 6em;
-  padding-right: 2em;
-  cursor: pointer;
-  color: #d3d3d3;
-}
-
 .logo {
   font-family: 'Nunito', sans-serif;
   font-size: 1.5em;
   cursor: pointer;
   color: inherit;
   transition: color 0.3s ease-in;
+}
+.user {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 90%;
+  min-width: 6em;
+  padding-right: 2em;
+  cursor: pointer;
+  color: #d3d3d3;
+}
+
+.login-form {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+}
+
+.login-wrapper {
+  margin-top: 1em;
 }
 </style>

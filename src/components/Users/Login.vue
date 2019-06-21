@@ -1,15 +1,14 @@
 <template>
   <div>
-    <h2>Log In</h2>
     <form @submit.prevent="login">
       <label for="email" required autofocus>E-Mail Address</label>
       <div>
-        <input id="email" type="email" v-model="email" required>
+        <input class="login-input" id="email" type="email" v-model="email" required>
       </div>
 
       <label for="password">Password</label>
       <div>
-        <input id="password" type="password" v-model="password" required>
+        <input class="login-input" id="password" type="password" v-model="password" required>
       </div>
     </form>
   </div>
@@ -23,5 +22,8 @@ export default Login
 </script>
 
 <style scoped>
+.login-input {
+  border-radius: 15%;
+}
 </style>
 
