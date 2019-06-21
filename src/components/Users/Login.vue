@@ -1,7 +1,7 @@
 <template>
   <div class="login-form">
     <form @submit.prevent="login">
-      <label class="login-label" for="username" required autofocus>E-Mail Address</label>
+      <label class="login-label" for="username" required autofocus>Username</label>
       <div>
         <input class="login-input" id="username" type="username" v-model="username" required>
       </div>
@@ -10,16 +10,19 @@
       <div>
         <input class="login-input" id="password" type="password" v-model="password" required>
       </div>
-      <div class="submit" @click="this.$store.LOGIN_USER(username, password)">Submit</div>
+      <div class="submit" @click="loginUser(username, password)">Submit</div>
     </form>
   </div>
 </template>
 
 <script>
-import Vuex from 'vuex'
-Vue.use('Vuex')
 export const Login = {
   name: 'Login',
+  methods: {
+    loginUser: function(u, p) {
+      // login logic
+    },
+  },
 }
 export default Login
 </script>
@@ -47,4 +50,3 @@ export default Login
   cursor: pointer;
 }
 </style>
-
