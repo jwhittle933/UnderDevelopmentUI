@@ -1,16 +1,17 @@
 <template>
   <div id="header" class="header" v-scroll="scroll">
     <div class="logo" @click="goHome">{{ headerText }}</div>
-
     <div class="user" @click="showLogin = !showLogin">
       Login
-      <div class="login-form">
+      <div class="icon-wrapper">
         <UserIcon :color="color"></UserIcon>
       </div>
     </div>
-    <div class="login-wrapper">
-      <Login v-if="showLogin"></Login>
-    </div>
+    <transition name="slide-down">
+      <div v-if="showLogin" class="login-wrapper">
+        <Login></Login>
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -76,37 +77,34 @@ export default Header
 .user {
   display: flex;
   justify-content: space-between;
-  position: fixed;
-  top: 0;
-  left: 90%;
   width: 5em;
   padding-right: 2em;
   cursor: pointer;
   color: #d3d3d3;
 }
 
-.login-form {
+.icon-wrapper {
   display: flex;
   justify-content: center;
-  align-items: left;
-  flex-direction: column;
-  max-width: 10em;
 }
 
 .login-wrapper {
-  position: absolute;
-  top: 50%;
-  left: 85%;
+  position: fixed;
+  top: 8%;
+  left: 89%;
   margin-top: 0.5em;
-  animation: slide-down 0.7s;
 }
 
-@keyframes slide-down {
-  0% {
-    transform: translateY(100%), scale(0.1);
-  }
-  100% {
-    transform: translateY(0%), scale(1);
-  }
+.slide-down-enter-active,
+.slide-down-leave-active {
+  transition: 0.3s;
+}
+
+.slide-down-enter {
+  transform: translate(0%, -100%) scale(0.01);
+}
+
+.slide-down-leave-to {
+  transform: translate(0%, -100%) scale(0.01);
 }
 </style>
