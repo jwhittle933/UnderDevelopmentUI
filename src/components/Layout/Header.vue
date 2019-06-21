@@ -6,10 +6,10 @@
       Login
       <div class="login-form">
         <UserIcon :color="color"></UserIcon>
-        <div class="login-wrapper">
-          <Login v-if="showLogin"></Login>
-        </div>
       </div>
+    </div>
+    <div class="login-wrapper">
+      <Login v-if="showLogin"></Login>
     </div>
   </div>
 </template>
@@ -79,7 +79,7 @@ export default Header
   position: fixed;
   top: 0;
   left: 90%;
-  min-width: 6em;
+  width: 5em;
   padding-right: 2em;
   cursor: pointer;
   color: #d3d3d3;
@@ -90,12 +90,23 @@ export default Header
   justify-content: center;
   align-items: left;
   flex-direction: column;
+  max-width: 10em;
 }
 
 .login-wrapper {
-  position: fixed;
-  top: 5%;
-  left: 88%;
+  position: absolute;
+  top: 50%;
+  left: 85%;
   margin-top: 0.5em;
+  animation: slide-down 0.7s;
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(100%), scale(0.1);
+  }
+  100% {
+    transform: translateY(0%), scale(1);
+  }
 }
 </style>
