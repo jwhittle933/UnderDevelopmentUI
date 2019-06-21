@@ -1,11 +1,8 @@
 <template>
   <div class="posts-view">
-    <div
-      class="posts-head"
-      :style="{
+    <div class="posts-head" :style="{
         'background-image': 'url(' + image + ')',
-      }"
-    >
+      }">
       <span class="head-text">All Posts</span>
       <div class="post-create" v-if="isLoggedIn">
         <CreateIcon
@@ -21,18 +18,10 @@
       v-on:update:show-posts-menu="showPostMenu = !showPostMenu"
     ></PostsMenu>
     <div class="select-display-wrapper">
-      <SelectPostsDisplay
-        v-on:update:displayType="displayType = $event"
-        :active="displayType"
-      ></SelectPostsDisplay>
+      <SelectPostsDisplay v-on:update:displayType="displayType = $event" :active="displayType"></SelectPostsDisplay>
     </div>
     <div :class="classType">
-      <PostTile
-        v-for="(post, i) in posts"
-        :post="post"
-        :displayType="displayType"
-        :key="i"
-      ></PostTile>
+      <PostTile v-for="(post, i) in posts" :post="post" :displayType="displayType" :key="i"></PostTile>
     </div>
   </div>
 </template>
