@@ -1,20 +1,23 @@
 <template>
-  <div>
+  <div class="login-form">
     <form @submit.prevent="login">
-      <label class="login-label" for="email" required autofocus>E-Mail Address</label>
+      <label class="login-label" for="username" required autofocus>E-Mail Address</label>
       <div>
-        <input class="login-input" id="email" type="email" v-model="email" required>
+        <input class="login-input" id="username" type="username" v-model="username" required>
       </div>
 
       <label class="login-label" for="password">Password</label>
       <div>
         <input class="login-input" id="password" type="password" v-model="password" required>
       </div>
+      <div class="submit" @click="this.$store.LOGIN_USER(username, password)">Submit</div>
     </form>
   </div>
 </template>
 
 <script>
+import Vuex from 'vuex'
+Vue.use('Vuex')
 export const Login = {
   name: 'Login',
 }
@@ -22,12 +25,26 @@ export default Login
 </script>
 
 <style scoped>
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-items: space-between;
+  align-items: center;
+}
 .login-label {
   color: white;
 }
 .login-input {
   border-radius: 10%;
   box-shadow: 1px 1px 1px 1px black;
+}
+.submit {
+  margin: 0.5em auto 0;
+  color: white;
+  background-color: black;
+  height: 30px;
+  width: 65px;
+  cursor: pointer;
 }
 </style>
 

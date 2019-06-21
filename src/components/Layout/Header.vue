@@ -7,7 +7,7 @@
         <UserIcon :color="color"></UserIcon>
       </div>
     </div>
-    <transition name="slide-down">
+    <transition name="slide">
       <div v-if="showLogin" class="login-wrapper">
         <Login></Login>
       </div>
@@ -90,21 +90,21 @@ export default Header
 
 .login-wrapper {
   position: fixed;
-  top: 8%;
-  left: 89%;
+  top: 9%;
+  left: 88%;
   margin-top: 0.5em;
 }
 
-.slide-down-enter-active,
-.slide-down-leave-active {
-  transition: 0.3s;
+.slide-enter-active,
+.slide-leave-active {
+  transition: 0.7s;
 }
 
-.slide-down-enter {
-  transform: translate(0%, -100%) scale(0.01);
+.slide-enter {
+  transform: translate(100%, 0%) scale(0.01);
 }
 
-.slide-down-leave-to {
-  transform: translate(0%, -100%) scale(0.01);
+.slide-leave-to {
+  transform: translate(100%, 0%) scale(0.01);
 }
 </style>
