@@ -20,6 +20,7 @@ export const Login = {
   name: 'Login',
   methods: {
     loginUser: function(u, p) {
+      return u + p
       // login logic
     },
   },
