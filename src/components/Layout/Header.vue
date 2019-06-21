@@ -2,25 +2,29 @@
   <div id="header" class="header" v-scroll="scroll">
     <div class="logo" @click="goHome">{{ headerText }}</div>
 
-    <div class="user">
+    <div class="user" @click="showLogin = !showLogin">
       Login
       <UserIcon :color="color"></UserIcon>
     </div>
+    <Login v-if="showLogin"></Login>
   </div>
 </template>
 
 <script>
 import { UserIcon } from '../Shared'
+import Login from '../Users/Login'
 
 export const Header = {
   name: 'Header',
   components: {
     UserIcon,
+    Login,
   },
   data() {
     return {
       headerText: '_D | under development',
       color: 'gray',
+      showLogin: false,
     }
   },
   methods: {

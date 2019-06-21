@@ -17,7 +17,7 @@
 
 <script>
 export const Login = {
-  name: 'Header',
+  name: 'Login',
 }
 export default Login
 </script>
