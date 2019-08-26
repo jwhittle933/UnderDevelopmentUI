@@ -4,7 +4,7 @@
       {{ headerText }}
     </div>
 
-    <div class="user">
+    <div class="user" @click="toLogin">
       Login
       <UserIcon></UserIcon>
     </div>
@@ -27,6 +27,9 @@ export const Header = {
   methods: {
     goHome: function() {
       this.$router.push('/')
+    },
+    toLogin: function() {
+      this.$router.push('/login')
     },
     scroll: function(evt, el) {
       if (window.scrollY > 150) {

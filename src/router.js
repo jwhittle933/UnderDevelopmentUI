@@ -4,6 +4,7 @@ import { Author, Authors } from './components/Authors'
 import { Comment, Comments } from './components/Comments'
 import { Landing } from './components/Landing'
 import { Post, Posts } from './components/Posts'
+import { Login } from './components/Users/'
 
 Vue.use(Router)
 
@@ -15,6 +16,7 @@ const routes = [
   { path: '/author/:id', component: Author },
   { path: '/comments', component: Comments },
   { path: '/comment/:id', component: Comment },
+  { path: '/login', component: Login },
   { path: '*' }, // fallback match for invalid url, 404
 ]
 
