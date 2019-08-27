@@ -2,7 +2,7 @@
   <div
     class="Login-page"
     :style="{
-      background: 'left / contain no-repeat url(' + image + ')',
+      background: 'left / contain url(' + image + ')',
     }"
   >
     <div class="Login">
@@ -30,7 +30,7 @@ export const Login = {
       password: '',
       emailFocus: false,
       passFocus: false,
-      image: require('@/assets/latin.jpg'),
+      image: require('@/assets/latin2.jpg'),
     }
   },
   methods: {
