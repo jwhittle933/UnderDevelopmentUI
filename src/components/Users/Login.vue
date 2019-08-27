@@ -58,7 +58,7 @@ export default Login
   margin: 10em auto;
   background-color: #2c3e50;
   border-radius: 5px;
-  animation: slide 0.1s linear;
+  /* animation: slide 0.1s linear; */
 }
 
 .Login-text {

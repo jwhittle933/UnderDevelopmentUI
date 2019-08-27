@@ -3,16 +3,23 @@
     <div class="logo" @click="goHome">
       {{ headerText }}
     </div>
-
-    <div class="user" @click="toLogin">
-      Login
+    <div
+      class="user"
+      @click="toLogin"
+      @mouseover="showUserOrLogin = true"
+      @mouseleave="showUserOrLogin = false"
+    >
       <UserIcon></UserIcon>
+      <p class="user-text" v-if="showUserOrLogin">
+        {{ getUser.userName || 'Login' }}
+      </p>
     </div>
   </div>
 </template>
 
 <script>
 import { UserIcon } from '../Shared'
+import { mapGetters } from 'vuex'
 
 export const Header = {
   name: 'Header',
@@ -22,6 +29,7 @@ export const Header = {
   data() {
     return {
       headerText: '_D | under development',
+      showUserOrLogin: false,
     }
   },
   methods: {
@@ -39,6 +47,9 @@ export const Header = {
         )
       } else el.setAttribute('style', 'color: #000')
     },
+  },
+  computed: {
+    ...mapGetters(['isLoggedIn', 'getUser']),
   },
 }
 
@@ -58,7 +69,7 @@ export default Header
   width: 100%;
   max-height: 2em;
   padding: 1em;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.3);
   z-index: 1000;
   transition: background-color 0.2s ease-in;
 }
@@ -71,6 +82,10 @@ export default Header
   padding-right: 2em;
   cursor: pointer;
   color: #d3d3d3;
+}
+
+.user-text {
+  transition: all 2s linear;
 }
 
 .logo {

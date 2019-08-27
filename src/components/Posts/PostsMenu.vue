@@ -155,10 +155,10 @@ export default PostsMenu
 
 .post-menu-trigger {
   position: absolute;
-  left: 48%;
+  left: 47%;
   bottom: -1.5em;
   height: 1.5em;
-  min-width: 1em;
+  min-width: 2em;
   background-color: inherit;
   border-radius: 0 0 5px 5px;
   cursor: pointer;
