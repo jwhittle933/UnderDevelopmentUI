@@ -31,8 +31,4 @@ export const PostsViewShowListIcon = {
 export default PostsViewShowListIcon
 </script>
 
-<style scoped>
-.icon {
-  cursor: pointer;
-}
-</style>
+<style scoped></style>

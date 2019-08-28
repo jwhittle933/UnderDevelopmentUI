@@ -6,7 +6,13 @@
         'background-image': 'url(' + image + ')',
       }"
     >
-      <div class="menu-button" @click="unrollMenu = !unrollMenu">Menu</div>
+      <div class="menu-button" @click="unrollMenu = !unrollMenu">
+        <MenuIcon
+          :color="'black'"
+          :iconWidth="'3em'"
+          :strokeWidth="'0'"
+        ></MenuIcon>
+      </div>
       <transition name="slide">
         <div v-if="unrollMenu" class="menu-wrapper">
           <Menu></Menu>
@@ -20,17 +26,20 @@
 <script>
 import { TopPosts } from './TopPosts'
 import { Menu } from '../Layout'
+import { MenuIcon } from '../Shared'
 
 export const Landing = {
   name: 'LandingView',
   components: {
     TopPosts,
     Menu,
+    MenuIcon,
   },
   data() {
     return {
       image: require('@/assets/splash.jpg'),
       unrollMenu: false,
+      menuHover: false,
     }
   },
 }

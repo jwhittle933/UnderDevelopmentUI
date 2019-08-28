@@ -42,4 +42,9 @@ h1 {
   color: #2c3e50;
   background-color: #ededed;
 }
+
+.icon {
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+}
 </style>

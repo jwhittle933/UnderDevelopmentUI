@@ -6,7 +6,7 @@ Vue.use(Vuex)
 const state = {
   user: {
     isLoggedIn: false,
-    userCredientials: {
+    userCredentials: {
       userName: '',
       userId: '',
     },
@@ -17,6 +17,8 @@ const state = {
 
 const mutations = {
   LOGIN_USER: ({ user }, { username, password }) => {
+    user.isLoggedIn = true
+    user.userCredentials.userName = username
     return { user, username, password }
   },
   LOGOUT_USER: ({ user }) => {

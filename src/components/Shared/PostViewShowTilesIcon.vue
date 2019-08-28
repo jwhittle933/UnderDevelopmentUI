@@ -31,8 +31,4 @@ export const PostsViewShowTilesIcon = {
 export default PostsViewShowTilesIcon
 </script>
 
-<style scoped>
-.icon {
-  cursor: pointer;
-}
-</style>
+<style scoped></style>

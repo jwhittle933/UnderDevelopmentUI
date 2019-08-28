@@ -3,16 +3,23 @@
     <div class="logo" @click="goHome">
       {{ headerText }}
     </div>
-
-    <div class="user">
-      Login
+    <div
+      class="user"
+      @click="toLogin"
+      @mouseover="showUserOrLogin = true"
+      @mouseleave="showUserOrLogin = false"
+    >
       <UserIcon></UserIcon>
+      <p class="user-text" v-if="showUserOrLogin">
+        {{ isLoggedIn || 'Login' }}
+      </p>
     </div>
   </div>
 </template>
 
 <script>
 import { UserIcon } from '../Shared'
+import { mapGetters } from 'vuex'
 
 export const Header = {
   name: 'Header',
@@ -22,11 +29,17 @@ export const Header = {
   data() {
     return {
       headerText: '_D | under development',
+      showUserOrLogin: false,
     }
   },
   methods: {
     goHome: function() {
-      this.$router.push('/')
+      // Vue router now returns a promise and requires a callback as second argument
+      // without this, pushing the current page onto history will throw an error
+      this.$router.push('/', () => {})
+    },
+    toLogin: function() {
+      this.$router.push('/login', () => {})
     },
     scroll: function(evt, el) {
       if (window.scrollY > 150) {
@@ -36,6 +49,9 @@ export const Header = {
         )
       } else el.setAttribute('style', 'color: #000')
     },
+  },
+  computed: {
+    ...mapGetters(['isLoggedIn', 'getUser']),
   },
 }
 
@@ -55,7 +71,7 @@ export default Header
   width: 100%;
   max-height: 2em;
   padding: 1em;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.3);
   z-index: 1000;
   transition: background-color 0.2s ease-in;
 }
@@ -68,6 +84,10 @@ export default Header
   padding-right: 2em;
   cursor: pointer;
   color: #d3d3d3;
+}
+
+.user-text {
+  transition: all 2s linear;
 }
 
 .logo {
