@@ -11,7 +11,7 @@
     >
       <UserIcon></UserIcon>
       <p class="user-text" v-if="showUserOrLogin">
-        {{ getUser.userName || 'Login' }}
+        {{ isLoggedIn || 'Login' }}
       </p>
     </div>
   </div>
@@ -34,10 +34,12 @@ export const Header = {
   },
   methods: {
     goHome: function() {
-      this.$router.push('/')
+      // Vue router now returns a promise and requires a callback as second argument
+      // without this, pushing the current page onto history will throw an error
+      this.$router.push('/', () => {})
     },
     toLogin: function() {
-      this.$router.push('/login')
+      this.$router.push('/login', () => {})
     },
     scroll: function(evt, el) {
       if (window.scrollY > 150) {

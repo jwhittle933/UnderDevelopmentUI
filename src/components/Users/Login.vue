@@ -12,16 +12,20 @@
         <input
           class="Login-input"
           :class="{ focus: emailFocus }"
+          v-model="email"
           @focus="focus"
         />
         <label class="Login-label">password </label>
-        <input class="Login-input" @focus="focus" />
+        <input class="Login-input" @focus="focus" v-model="password" />
       </div>
+      <div class="Login-button" @click="login()">Submit</div>
     </div>
   </div>
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex'
+
 export const Login = {
   name: 'Login',
   data() {
@@ -33,16 +37,28 @@ export const Login = {
       image: require('@/assets/latin2.jpg'),
     }
   },
+  created() {
+    if (this.isLoggedIn) return this.$router.push('/')
+  },
   methods: {
     focus: function() {
       console.log('an element has been focused')
     },
+    login: function() {
+      this.loginUser()
+      this.$router.push('/', () => {})
+    },
+    ...mapActions(['loginUser']),
+  },
+  computed: {
+    ...mapGetters(['isLoggedIn']),
   },
 }
 
 export default Login
 </script>
-<style>
+
+<style scoped>
 @keyframes slide {
   0% {
     transform: translateX(-5em);
@@ -95,5 +111,20 @@ export default Login
   border-radius: 4px;
   outline: none;
   font-size: 1.2em;
+}
+
+.Login-button {
+  color: white;
+  width: 20%;
+  border: 2px solid white;
+  border-radius: 4px;
+  margin: 0 auto;
+  transition: all 0.1s linear;
+}
+
+.Login-button:hover {
+  cursor: pointer;
+  background-color: #eee;
+  color: black;
 }
 </style>

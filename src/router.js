@@ -9,14 +9,14 @@ import { Login } from './components/Users/'
 Vue.use(Router)
 
 const routes = [
-  { path: '/', component: Landing },
-  { path: '/posts', component: Posts },
-  { path: '/post/:id', component: Post },
-  { path: '/authors', component: Authors },
-  { path: '/author/:id', component: Author },
-  { path: '/comments', component: Comments },
-  { path: '/comment/:id', component: Comment },
-  { path: '/login', component: Login },
+  { path: '/', component: Landing, auth: false },
+  { path: '/posts', component: Posts, auth: false },
+  { path: '/post/:id', component: Post, auth: false },
+  { path: '/authors', component: Authors, auth: false },
+  { path: '/author/:id', component: Author, auth: false },
+  { path: '/comments', component: Comments, auth: false },
+  { path: '/comment/:id', component: Comment, auth: false },
+  { path: '/login', component: Login, auth: false },
   { path: '*' }, // fallback match for invalid url, 404
 ]
 
